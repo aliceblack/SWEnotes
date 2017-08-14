@@ -1,0 +1,456 @@
+L1
+
+-efficacia: garantire la qualità dei prodotti, determinata dal grado di conformità del prodotto rispetto alle norme vigenti e agli obiettivi prefissati.
+
+-efficienza: contenere i costi e i tempi di produzione, inversamente proporzionale alla quantità di risorse impiegate nell’esecuzione delle attività richieste.
+
+-massimizzare efficacia ed efficienza: Riuscire a soddisfare obiettivi prefissati entro limiti certi di tempo e di sforzo.
+
+-manutenibilità: è una qualità del software; 
+può essere correttiva per correggere difetti eventualmente rilevati; 
+adattiva per adattare il sistema alla variazione dei requisiti; 
+evolutiva per aggiungere funzionalità al sistema.
+
+-best practice: Prassi (modo di fare) che per esperienza e per studio abbia mostrato di garantire i migliori risultati in circostanze note e specifiche.
+
+-stake holder: portatori d'interesse, L’insieme di persone a vario titolo coinvolte nel ciclo di vita del SW, che hanno influenza sul prodotto o sul processo.
+
+-swe: L’approccio sistematico, disciplinato e quantificabile allo sviluppo, l’uso, la manutenzione e il ritiro del SW(glossario ieee).
+L’applicazione di principi ingegneristici al SW, Il controllo di efficienza ed efficacia ha bisogno di un approccio sistematico.
+Approccio Sistematico = metodico, rispettare un metodo noto, una check-list, secondo un certo ordine. Seguendo norme di condotta, aderendo a standard.
+Approccio Disciplinato = insieme di norme che seguo, o meglio ancora delle best practice.
+Approccio Quantificabile = so quanto consumerò, con una stima ragionevole.
+Approccio ingegneristico: Disciplinato, sistematico, quantificabile.
+
+-Pianificazione: Organizzare e controllare tempo, risorse e risultati.
+-Analisi dei requisiti: Definire cosa bisogna fare.
+-Progettazione: Definire come bisogna farlo.
+-Realizzazione: Farlo con la massima efficienza e la massima efficacia.
+-Verifica e validazione: Assicurare che quanto fatto soddisfi i requisiti e non contenga errori.
+-Manutenzione: Assicurare pieno utilizzabilità del SW fino al momento del suo ritiro.
+
+L2(+L1)
+-ciclo di vita del sw: Gli stati che il prodotto assume dal concepimento al ritiro.
+Per organizzare al meglio le attività necessarie all’interno di vincoli dati di tempo, di risorse e di obiettivi.
+Stati sono Concezione → sviluppo → utilizzo → ritiro.
+
+-Processi di ciclo di vita: Specificano le attività che vanno svolte per causare transizioni di stato nel ciclo di vita di un prodotto SW.
+
+-Modelli di ciclo di vita: Descrivono come i processi si relazionano tra loro nel tempo rispetto agli stati di ciclo di vita.
+Base concettuale intorno alla quale pianificare, organizzare, eseguire e controllare lo svolgimento delle attività necessarie.
+Vederlo come una macchina a stati, stati rappresentano il grado di maturazione del prodotto SW, archi (transizioni di stato) sono l’insieme di attività svolte sul prodotto che servono a farlo avanzare nel grado di maturazione.
+
+(da L3)
+Il modello di ciclo di vita adottato pone vincoli su pianificazione e gestione del progetto, indipendente da metodi e strumenti. 
+Descrivono come i processi si evolvono nel tempo rispetto agli stati nel ciclo di vita.
+L’adozione di un modello richiede un sistema di qualità per garantire e misurare conformità e maturità.
+[La durata temporale entro uno stato di ciclo di vita o in una transizione tra essi viene detta «fase»]
+
+-code and fix, raggiungere la correttezza “by correction”.
+-sequenziale a cascata: fasi definite per attività previste e prodotti attesi in ingresso e in uscita, contenuto e struttura dei documenti, scadenze. Fasi distinte fra loro. Il modello originale prevede che non si possa mai essere in due stati diversi allo stesso tempo e che non si possa tornare ad uno stato. Non ammete variazione requisiti. Passaggio di fase basato su documentazione. Il passaggio da una fase alla successiva è basato sulla documentazione, ogni fase produce documenti che la concretizzano e devono essere approvati per il passaggio alla fase successiva. Corretto in cascata con ritorni.
+
+---incrementali: producono valore ad ogni incremento, funzionalità essenziali sono sviluppate nei primi incrementi. Incremento è quantificabile.
+Incremento = Procedere per incrementi significa aggiungere a un impianto base.
+---iterativi adattamento. iterazione non qunatificabile. 
+Iterazione = Procedere per iterazioni significa operare raffinamenti o rivisitazioni.
+
+-incrementale:  approssimare la soluzione per incrementi, requisiti utente sono classificati e trattati in base alla loro importanza strategica.
+[ogni incremento attraversa tutte le fasi del modello sequenziale]
+
+-evolutivo: rispondere a bisogni non inizialmente preventivabili, può richiedere il rilascio e il mantenimento di più versioni del prodotto
+simultaneamente disponibili usabili dall'utente, può richiedere rilascio più versioni. Riattraversamento più fasi di ciclo di vita. 
+
+-a spirale: Cicli interni rapidi e ripetuti, dedicati ad analisi e sviluppi prototipali(ANALISI DEI RISCHI). Cicli esterni che aderiscono a un qualsiasi altro modello standard di ciclo di vita. Ad ogni ciclo si analizzano i rischi e si compiono simulazioni. 
+Attività principali per ogni ciclo: Definizione degli obiettivi, Analisi dei rischi, Sviluppo e validazione, Pianificazione(prossimo ciclo).
+
+-a componenti: molto di quello che ci serve fare è già stato fatto e molto di quello che faremo ci potrà servire ancora. Riuso sistematico di componenti preesistenti proprie oppure “off-the-shelf”.
+
+-agili: Backlog, sprint, daily scrum, incrementi devono essere funzionanti, pezzi realizzabili.
+1) Individuals and interactions over processes and tools L’eccessiva rigidità ostacola l’emergere del valore
+2) Working sofware over comprehensive documentation La documentazione non sempre corrisponde a SW funzionante
+3) Customer collaboration over contract negotiation L’interazione con gli stakeholder va incentivata e non ingessata
+4) Responding to change over following a plan La capacità di adattamento al cambiare delle situazioni è importante.
+
+-controllo di versione: ciò che è oggetto di manutenzione ha una storia(il controllo di versione) che va gestita con controllo di versione.
+
+-configurazione: Se un insieme è composto di parti, quali esse sono e il modo in cui esse devono stare insieme è detto “configurazione”,
+ogni sistema fatto di parti va gestito con controllo di configurazione. Ogni configuration item ha una sua versione(storia).
+
+-Prototipo: 
+Serve per provare e scegliere soluzioni Può essere “usa e getta” (nel caso delle iterazioni) oppure fornire stati di incremento (baseline). Necessità di fornire / utilità di cercare evidenza preliminare di fattibilità. Baseline è stato di incremento, punto di arrivo tecnico dal quale non scendo, risultato sulla quale baso l'incremento.[baseline più avanti]
+
+-Riuso: 
+Occasionale (opportunistico) – «copia-incolla» a basso costo e scarso impatto, 
+Sistematico (per progetto, per prodotto, per azienda) a maggior costo ma maggior impatto.
+(da L7)
+
+Riuso: 
+Capitalizzare sottosistemi già esistenti
+->Impiegandoli più volte per più prodotti
+->Ottenendo minor costo realizzativo
+->Ottenendo minor costo di verifica
+
+Problemi del riuso
+->Progettare per riuso è più difficile (Bisogna anticipare bisogni futuri) 
+->Progettare con riuso non è immediato (Bisogna minimizzare le modifiche alle componenti riusati per non perderne il valore)
+
+Riuso è Puro costo nel breve periodo
+->Diventa risparmio nel medio termine (quindi è un investimento) 
+
+
+
+-processo: Un processo è un insieme di attività correlate e coese che trasformano ingressi in uscite secondo regole fissate, consumando risorse nel farlo (Glossario ISO 9000).
+
+-Lo standard come modello di azione: Definizione e imposizione di procedure, Definizione e proposizione di processi da specializzare
+-Lo standard come modello di valutazione Identificazione di “best practice” CMMI, SPICE, ISO/IEC TR 15504.
+
+Standard di processo: è un cuneo che non mi fa scendere, non peggioro.
+
+
+-modello ad alto livello: identifica processi sviluppo sw, responsabilità sui processi, identifica prodotti dei processi.
+
+ISO/IEC 12207 è il modello più noto e riferito per lo standard (generale) di processo, modello ad alto livello, identifica i processi dello sviluppo software, descrive i processi in termini di attività e compiti elementari, i prodotti dei processi, specifica le responsabilità sui processi.
+
+-processi primari: se ci sono allora esiste il progetto; acquisizione= gestione fornitori; fornitura= gestione rapporto con clienti; sviluppo;
+gestione operativa= utilizzo, installazione erogazione prodotti/servizi; manutenzione= correzione adattamento evoluzione.
+
+-processi di supporto: procedure da chiamare quando  ne si ha il bisogno; documentazione, accertamento qualità, gestione versioni e configurazione, qualità=verifica+validazione, revisioni congiunte con il cliente, verifiche ispettive interne, risoluzione dei problemi.
+
+-processi organizzativi: per il lavoro collaborativo e l'ambiente, defiiscono la struttura organizzativa a precindere dal prodotto; gestione processi, gestione infrastrutture, miglioramento del processo, formazione del personale.
+
+Fine L2
+
+
+-modularità: I processi sono tra loro relazionati in modo chiaro e distinto.
+-coesione: Le attività di processo sono ben definite e correlate tra di loro (e così anche i compiti al loro interno).
+
+-Processo standard: Riferimento di base generico, condiviso tra aziende diverse nello stesso dominio applicativo.
+-Processo definito: Specializzazione di processo standard, per adattarlo alle specifiche esigenze e caratteristiche aziendali.
+-Processo di progetto: Istanziazione di processi definiti, utilizzano risorse aziendali per raggiungere obiettivi prefissati e limitati nel tempo, cioè progetti.
+
+-PDCA: Organizzazione interna dei processi incentrata sul principio del miglioramento continuo (W.A. Shewhard, W.E. Deming)
+Pianificare (Plan): definire attività, scadenze, responsabilità, risorse utili a raggiungere specifici obiettivi di miglioramento, gestione risorse!
+Eseguire (Do): eseguire le attività secondo P, realizzazione prodotto!
+Valutare (Check): verificare l’esito delle azioni di miglioramento rispetto alle attese, misurazione e analisi. Si studiano i risultati della fase precedente (do) e li si cofrontano con gli obiettivi individuati nella prima fase (plan).
+Agire (Act): applicare correzioni alle carenze rilevate e standardizzare quanto è andato bene.
+
+L4
+
+-log è l'evento che lascia la traccia
+-push/pull alternative di richiesta infomrazione
+Effettuare misurazioni allo scopo di massimizzare l'efficineza ricevendo infomrazioni in modo push.
+
+-ruolo = funzione aziendale assegnata a progetto.
+-profilo professionale = competenze tecnologiche, esperienza, requisiti per assunzione di un ruolo in un progetto.
+
+Ruoli
+-responsabile: rappresenta il progetto, responsabilità di pianificazione, risorse umane, gestione costi. Redazione e manutenzione di regole e
+procedure di lavoro.
+-amministratore: amministra risorse e infrastrutture, gestione documentazione, controllo versione+configurazione, risoluzione problemi legati alla gestione processi. Predispone strumenti e regole.
+-analista: analisi requisiti, capisce il problmea non sviluppa la soluzione.
+-progettista: sviluppa la soluzione.
+-programmatore: puro esecutore.
+-verificatore: verifica ciò ch eè stato fatto dagli altri, che sia corretto e soddisfi le attese.
+
+-Work Breakdown Structure: scomporre attività in sottoattività. Attribuibili ad individui.
+-Gantt: rappresentare durata, confronto stime e progressi, sequanzialità e parallelismo (non adatto per dipendenze).
+-PERT: dipendenze temporali tra attività, slack. Un tale diagramma è un grafo orientato dove gli archi rappresentano le attività, mentre i nodi sono degli eventi. Ogni evento ha una data minima a partire da cui può accadere e una data massima oltre la quale esso ritarda gli eventi successivi; la differenza tra questi due tempi è detta slack time.
+
+COCOMO constructive cost model m/p=CxMxD^s
+funzione matematica che produce in uscita un valore in tempo/persona.
+fattori statici che compaiono identificano:
+C complessità del progetto. Valore soggettivo che decresce con l’esperienza (valore basso, modesta complessità; valore alto, alta complessità).
+D dimensione stimata del prodotto (diversa dalla complessità) anch’essa dipendente dall’esperienza misurato in KDSI (Kilo Delivered Source Instruction), è l'unità di misura della dimensione stimata del prodotto software D, in cui si esprime la dimensione del prodotto che rappresenta il peso del codice sorgente consegnato richiesto per il progetto.
+M moltiplicatori di costo, dice che altri elementi del progetto (anche esterni) incidono nella dimensione del progetto (ad esempio una collaborazione remota tra gli sviluppatori..)
+S fattore di complessità (del codice)
+Bassa complessità: tutti gli sviluppatori coinvolti sul progetto hanno una buona visione dei contenuti del progetto
+Media complessità: per capire tutto bisogna tornare al “divide et impera”, capendo le parti singole ma nel complesso un po’ meno
+Elevata complessità (embedded): il prodotto interagisce con componenti esterne che non sono parte del progetto sulle quali noi abbiamo zero influenza
+[...]
+
+-Identificazione dei rischi: In relazione al progetto, al prodotto, al business.
+-Analisi dei rischi: Valutazione della probabilità di occorrenza, Valutazione delle conseguenze.
+-Verifica del livello di rischio da effettuare su base regolare per determinare il livello corrente di rischio.
+Fonti di rischio:
+◦ tecnologie
+◦ rapporti interpersonali
+◦ organizzazione del lavoro
+◦ requisiti e rapporti con gli stakeholder
+◦ tempi e costi
+
+L5
+
+Massima efficacia nel prodotto con massima efficienza nel lavoro.
+
+I documenti sono utili se e solo se sono sempre disponibili, chiaramente identificati, corretti nei contenuti, verificati e approvati, aggiornati, datati e dotati di versione.
+La loro diffusione deve essere controllata, I destinatari devono essere chiaramente identificati, Ogni documento ha una sua lista di distribuzione, L’amministratore gestisce le liste di distribuzione e ne assicura il rispetto.
+
+Milestone: obbligo/opportunità misuratore di avanzamento di progresso. Indica un punto nel tempo (calendario). Importanti traguardi intermedi nello svolgimento del progetto. Ogni milestone di calendario è associata a uno specifico insieme di baseline. Indica importanti traguardi intermedi nello svolgimento del progetto.
+Le milestone servono per fissare dei punti di avanzamento significativi rispetto agli obiettivi stabiliti e al tempo a disposizione. Un progettatore assegna milestone che hanno una distanza tale per cui arrivarci significa raggiungere un punto importante: infatti, ogni milestone corrispone a una specifica configurazione del sistema. Ogni milestone ha un proprio nome se associata e una configurazione detta baseline.
+
+Baseline:  è stato di incremento, punto di arrivo tecnico dal quale non scendo, risultato sulla quale baso l'incremento. Campobase punto di arrivo tecnico, vicino alla fine, realizzazione stabile, risultato sulla quale basare il successivo incremento, si può tornare a baseline precedenti. E' il prodotto tangibile, associato alle milestone.
+Quello di baseline indica un punto d’arrivo tecnico dal quale non si retrocede; la baseline è fatta di elementi della configurazione e, poiché ogni parte è versionata, possiamo conoscere la differenza tra una baseline e l’altra. Una baseline è qualcosa di stabile — non usa e getta! — e sta in un repository; serve da base per gli avanzamenti futuri e può essere cambiata solo tramite procedure di controllo di cambiamento.
+2. La baseline è una versione approvata di un configuration item che è stata formalmente progettata e definita (/sistemata, ”fixed”) in un momento specifico del ciclo di vita del configuration item. [SWEBok 6-7]
+3. Una baseline è una collezione delle versioni dei componenti che compongono un sistema. Le baseline sono controllate, il che significa che le versioni dei componenti che compongono il sistema non possono essere cambiate e che è sempre possibile ricreare
+una baseline a partire dai componenti che la costituiscono. [Sommerville, pag 684]
+
+Controllo di baseline: L’insieme di CI consolidato a una specifica milestone.
+Base verificata, approvata e garantita per la prosecuzione dello sviluppo.
+L’esistenza di baseline ben identificate permette Riproducibilità, Tracciabilità, Analisi e confronto.
+
+Le richieste di modifiche hanno origine da Utenti (difetti o mancanze) Sviluppatori (idem) Competizione (valore aggiunto).
+Le richieste di modifica vanno sottoposte a un rigoroso processo di analisi, decisione, realizzazione e verifica.
+Ogni richiesta/proposta di modifica va inoltrata in modo formale -> Change request.
+Di ogni richiesta di modifica bisogna tenere traccia di: Issue tracking(sistema informatico che gestisce e registra delle liste di richieste di assistenza o di problemi) o ticketing e di Stato corrente ed eventuale esito chiusura.
+Si appoggia su un repository->DB centralizzato nel quale risiedono - individualmente – tutti i CI di ogni baseline nella loro storia completa.
+Permette a ciascuno di lavorare su vecchi e nuovi CI senza rischio di sovrascritture accidentali e di condividere il lavorato nello spazio comune.
+Verifica la bontà di ogni modifica di baseline = Build.
+Versione = Istanza di prodotto funzionalmente distinta dalle altre.
+Variante = Istanza di prodotto funzionalmente identica ad altre ma diversa per caratteristiche non funzionali.
+Rilascio (release) = Istanza di prodotto resa disponibile a utenti esterni.
+Tutte vanno identificate, pianificate e gestite.
+
+L6
+
+Way of working: crea requisiti, verifico ma non valido la way of working.
+Le norme di progetto descrivono come dovrà essere il way of working.
+Individuiamo due categorie di norme: regole (sottoposte a verifica) e raccomandazioni (suggerimenti, senza verifica).
+
+-Qualifica = Verifica+Validazione due processi distinti la cui unione da la qualifica.
+-Verifica: Accertare che l’esecuzione delle attività di processo non abbia introdotto errori "did i build the system right". Rivolta ai processi ma viene svolta sui loro prodotti per accertare il rispetto di regole, convenzioni e procedure; accerta il rispetto di norme e procedure.
+-Validazione: "did i build the right system"Accertare che il prodotto realizzato corrisponda alle attese, rivolto ai prodotti finali; che prodotto finale sia conforme, soddisfi requisiti.
+Self fulfilling prophecy, dico prima so che accade, attività preventive di verifica che diano informazione, applicata la modo in cui lavoro.
+
+Requisiti
+Condizione (capability) necessaria a un utente per risolvere un problema o raggiungere un obiettivo
+Condizione (capability) che deve essere soddisfatta o posseduta da un sistema per adempiere a un obbligo
+
+Analisi
+Studio dei bisogni e delle fonti;
+Classificazione dei requisiti;
+Modellazione concettuale del sistema (visione Use Case): Partizionamento in componenti (ambiti) a scopo di allocazione dei requisiti (con diagrammi dei casi d’uso);
+Assegnazione dei requisiti a parti distinte del sistema;
+Negoziazione con il committente e con i sotto-fornitori.
+
+Gli attributi di prodotto definiscono le caratteristiche richieste al sistema, Requisiti funzionali, prestazionali, di qualità (di prodotto).
+Gli attributi di processo pongono vincoli sui processi impiegati nel progetto, come farlo,requisiti di vincolo (realizzativo, normativo, contrattuale).
+
+I requisiti hanno diversa utilità strategica:
+Obbligatori Irrinunciabili per qualsiasi stakeholder;
+Desiderabili Non strettamente necessari ma a valore aggiunto riconoscibile;
+Opzionali Relativamente utili oppure contrattabili in seguito.
+I requisiti non devono essere in conflitto tra loro.
+
+Distinguiamo tra requisiti utente (di alto livello) e requisiti di sistema (più dettagliati).
+
+l'incontro tra bisogno e soluzione viene chiamato tracciamento(l’incontro dei bisogni e dei requisiti,fornisce un dato quantitativo, indica quanti requisiti sono stati soddisfatti,nessuna funzionalità superflua, nessun componente ingiustificato,Tracciare un requisito significa motivarne l’esistenza, spiegando qual è l’origine di tale requisito, badando a garantire la necessità e la sufficienza di ogni requisito), serve al verificatore.
+
+-requisiti funzionali — descrivono i servizi che il sistema deve fornire 
+accertiamo il soddisfacimento dei requisiti funzionali attraverso test, dimostrazione formale e revisione.
+-requisiti non funzionali — i vincoli sui servizi che il sistema fornisce
+-requisiti prestazionali: definiscono quanto bene il sistema sta svolgendo determinate funzioni in certe particolari condizioni,
+accertiamo il soddisfacimento dei requisiti prestazionali attraverso misurazione.
+-requisiti qualitativi: servono a definire la qualità del prodotto
+accertiamo il soddisfacimento dei requisiti qualitativi attraverso verifiche ad hoc
+-requisiti di vincolo: sono imposti dal cliente o dall’ambiente operativo in cui funzionerà il sistema
+accertiamo il soddisfacimento dei requisiti di vincolo attraverso revisione.
+
+*************************************************************************************************************************
+
+L7 Progettazione Softeare
+
+La progettazione precede la produzione: costruzione a priori perseguendo la correttezza per costruzione invece che inseguendo la correttezza per correzione.
+Progettare per:
+Dominare la complessità del prodotto («divide-et-impera»);
+Organizzare e ripartire le responsabilità di realizzazione;
+Produrre in economia (efficienza);
+Garantire qualità (efficacia).
+
+(L’analisi risponde alla domanda: qual’è il problema, quale la cosa giusta da fare? Comprensione del dominio Discernimento di obiettivi, vincoli e requisiti, Approccio investigativo.)
+La progettazione risponde alla domanda: come farla giusta?
+Descrizione di una soluzione soddisfacente per tutti gli stakeholder;
+Il codice non esiste ancora;
+Prodotti: l’architettura scelta e i suoi modelli logici;
+Approccio sintetico.
+
+Enunciazione del problema --(analisi)--> Requisiti del problema --(progettazione)-->  Soluzione del problema
+
+Obiettivi della progettazione
++Soddisfare i requisiti con un sistema di qualità
++Definendo l’architettura logica del prodotto
+Impiegando componenti con specifica chiara e coesa
+Realizzabili con risorse date e costi fissati
+Struttura che facilita eventuali cambiamenti futuri
++ La scelta di una buona architettura facilita il successo
+Identificare schemi architetturali utili al caso e componenti riusabili
++Dominare la complessità del sistema
+Suddividere il sistema fino a che ciascuna sua componente abbia complessità trattabile
+Per facilitare la comprensione e poterne assegnare la codifica a un singolo individuo
++Spingere la progettazione nel dettaglio
+Sapendo riconoscere le componenti terminali(Quando il beneficio di ulteriore decomposizione è inferiore al costo di utilizzo)
+Più minute le componenti più complessa la loro orchestrazione (Usare classi è più espressivo che usare registri di CPU).
+
+Definizione iso/iec 42010:2011
+-La decomposizione del sistema in componenti
+-L’ organizzazione di tali componenti (Definizione di ruoli, responsabilità, interazioni cioè chi fa cosa e come)
+-Le interfacce necessarie all’interazione tra le componenti tra loro e con l’ambiente (Come le componenti possono collaborare)
+-I paradigmi di composizione delle componenti (Regole, criteri, limiti, vincoli, anche a fini di manutenibilità).
+
+An architectural style is a named collection of architectural design
+decisions that
+• are applicable in a given development context
+• constrain architectural design decisions that are specific to a
+particular system within that context
+• elicit beneficial qualities in each resulting system
+
+Esistono stili architetturali
+Aderire a uno «stile» garantisce coerenza e consistenza.
+Le «scelte architetturali» determinano l’organizzazione dell’informazione e l’interazione tra le parti.
+
+Qualità di una buona architettura
++Sufficienza: capacità di soddisfare tutti i requisiti.
++Comprensibilità: può essere capita dai portatori di interesse..
++Modularità: è suddivisa in parti chiare e ben distinte
++Robustezza: è capace di sopportare ingressi diversi (giusti sbagliati tanti pochi) dall'utente e dall'ambiente.
++Flessibilità: permette modifiche a costo contenuto al variare dei requisiti.
++Riusabilità: sue parti possono essere utilmente impiegate in altre applicazioni.
++Efficienza: nel tempo nello spazio e nelle comunicazioni.
++Affidabilità: reliability è altamente probabile che svolga bene il suo compito quando utilizzata.
++Disponibilità(availability): necessita di poco o nullo tempo di manutenzione fuori linea(non tutto il sistema deve essere interrotto se qualche sua parte è sotto intervento).
++Sicurezza rispetto a malfunzionamenti(safety): è esente da malfunzionamenti gravi (il sistema dispone di un sucìfficiente grado di ridondanza per restare utilmente operativo anche in presenza di guasti locali).
++Sicurezza rispetto a intrusioni(security): i suoi dati e le sue funzioni non sono vulnerabilli a intrusioni.
++Semplicità: ogni parte contiene solo il necessario e niente di superfluo.
+
++Incapsulazione(information hiding): l'interno delle componenti non è visibile all'esterno. Le componenti sono “black box”, I suoi clienti ne conoscono solo l’interfaccia. La loro specifica nasconde gli algoritmi e le strutture dati usati al loro interno. Benefici: L’esterno non può fare assunzioni sull’interno; Cresce la manutenibilità; Diminuendo le dipendenze aumentano le opportunità di riuso.
+
++Coesione: le parti che stsnno assieme hsnno gli stessi obiettivi.
+[SOLID]
+Proprietà interna di singole componenti, Funzionalità “vicine” devono stare nella stessa componente, La modularità spinge a decomporre il grande in piccolo, La ricerca di coesione aiuta sia a decomporre che a porre un limite inferiore alla decomposizione
+La coesione va massimizzata!
+Benefici Maggiore manutenibilità e riusabilità Minore interdipendenza fra componenti, Maggiore comprensione dell’architettura del sistema.
+Vi sono svariati tipi di coesione buona:
+- Funzionale, quando le parti concorrono al medesimo specifico compito
+- Sequenziale, quando alcune azioni sono «vicine» ad altre per ordine di esecuzione e dunque conviene tenerle insieme
+- Informativa, quando le parti agiscono sulla stessa unità di informazione
+
+
++Basso accoppiamento: parti distinte dipendono poco o niente le une dalle altre. 
+•Parti diverse possono avere un grado di interdipendenza cattiva tra loro: 
+-Facendo assunzioni dall’esterno su come le parti facciano il loro mestiere all’interno (per variabili, locazioni, tipi)
+-Imponendo vincoli dall’esterno sull’interno di una parte (per ordine di azioni, uso di certi dati, formati, valori)
+-Condividendo frammenti delle stesse risorse (strutture dati)
+•Un sistema è un insieme organizzato Dunque ha necessariamente un po’ di accoppiamento (la buona progettazione lo tiene basso)
+•Indice di utilità FanIn -> f() -> FanOut  indice di dipendenza (accoppiamento)
+•L'accoppiamento è una proprietà esterna di componeti
+il grado di utilizzo U reciproco di M componeti 
+U=MxM massimo accoppiamnto
+U=0 accoppiamneto nullo
+•Metriche: fanIn e fanOut strutturale  
+SFIN è indice di utilità -> massimizzare 
+SFOUT è indice di dipendenza -> minimizzare
+Una buona progettazione produce componenti con SFIN elevato
+
+
+Progettazione architetturale
+Top-down: Decomposizione di problemi, Stile funzionale.
+Bottom-up: Composizione di soluzioni, Stile object-oriented.
+Meet-in-the-middle : Approccio intermedio Il più frequentemente seguito.
+
+
+Framework
+-Insieme integrato di componenti SW prefabbricate, nel mondo pre-OO erano chiamate librerie
+Sono bottom-up perché fatti di codice già sviluppato
+Sono anche top-down se impongono uno stile architetturale
+-Utilissimi come base facilmente riusabile di diverse applicazioni entro un dato dominio
+Molti importanti esempi nel mondo J2EE e JS
+Spring (http://www.springsource.org/about) per architetture di business con MVC
+Struts (http://struts.apache.org/) per Web Apps in stile MVC
+Swing per GUI, ecc.
+
+Pattern Architetturali
+-Soluzioni fattorizzate per problemi ricorrenti
+Metodo tipico dell’ingegneria classica
+La soluzione deve riflettere il contesto (La soluzione deve soddisfare il bisogno e non viceversa!)
+La soluzione deve essere credibile (dunque provata altrove)
+Esempi
+ Modello di cooperazione di tipo cliente-servente
+ Comunicazione a memoria condivisa o scambio di messaggi
+ Comunicazioni sincrone (interrogazione e attesa)
+ Comunicazioni asincrone (per eventi)
+
+Design Pattern:
+Soluzione progettuale a problema ricorrente
+Definisce una funzionalità lasciando gradi di libertà d’uso (Ha corrispondenza precisa nel codice sorgente)
+Il corrispondente architetturale degli algoritmi che invece specificano procedimenti di soluzione
+Rilevante nel SW a partire dalla pubblicazione di “Design Patterns” della Gang of Four 
+Per la progettazione a livello sistema si usano pattern architetturali!
+
+Pattern Architetturali:
+-Architettura “three-tier” (a livelli)
+ Strato della presentazione (GUI)
+ Strato della logica operativa (business logic)
+ Strato dell’organizzazione dei dati (database)
+-Variante multilivello (pila OSI e TCP/IP)
+-Architettura produttore-consumatore
+ Collaborazione a pipeline
+-Architettura cliente-servente
+ Con cliente complesso (“fat client”) Meno carico sul servente ma scarsa portabilità
+ Con cliente semplificato (“thin client”) Maggior carico di comunicazione ma buona portabilità
+-Architettura “peer-to-peer”
+ Interconnessione di scambio senza server intermedio
+
+
+Progettazione di dettaglio: attività
+- Definizione delle unità realizzative (moduli)
+Un carico di lavoro realizzabile dal singolo programmatore;
+Un “sottosistema” definito-> Un componente terminale (non ulteriormente decomponibile) o un loro aggregato;
+Un insieme di entità (tipi, dati, funzionalità) strettamente correlate -> Raccolti insieme in un package (come un insieme di classi) Nei sorgenti oppure nel codice oggetto (come in Java).
+-Specifica delle unità come insieme di moduli
+Definizione delle caratteristiche significative-> Da fissare nella progettazione;
+Dal nulla o tramite specializzazione di componenti esistenti.
+
+
+Progettazione di dettaglio: obiettivi
+-Assegnare unità a componenti
+Per organizzare il lavoro di programmazione;
+Per assicurare congruenza con l’architettura di sistema;
+-Produrre la documentazione necessaria.
+Perché la programmazione possa procedere in modo certo e disciplinato;
+Tracciamento per attribuire requisiti alle unità;
+Per definire le configurazioni ammissibili del sistema.
+-Definire gli strumenti per le prove di unità
+Casi di prova e componenti ausiliarie per la verifica unitaria e di
+integrazione.
+
+Documentazione
+IEEE 1016:1998 Software Design Document
+Introduzione (Come nel documento AR, software requirements specification)
+Riferimenti normativi e informativi
+Descrizione della decomposizione architetturale (Moduli, processi, dati)
+Descrizione delle dipendenze (tra moduli, processi, dati)
+Descrizione delle interfacce (tra moduli, processi, dati)
+Descrizione della progettazione di dettaglio
+
+
+SEMAT (Software Engineering Method and Theory) drives a process to refound software engineering based on a solid theory, proven principles and best practices.
+
+Stati di progresso per SEMAT
+-Architecture selected
+Selezione di una architettura tecnicamente adatta al problema:
+accordo sui criteri di selezione;
+Selezione delle tecnologie necessarie;
+Decisioni su buy, build, make.
+-Demonstrable
+Dimostrazione delle principali caratteristiche dell’architettura: gli stakeholder concordano;
+Decisione sulle principali interfacce e configurazioni di sistema.
+-Usable
+Il sistema è utilizzabile e ha le caratteristiche desiderate;
+Il sistema può essere operato dagli utenti;
+Le funzionalità e le prestazioni richieste sono state verificate e
+validate;
+La quantità di difetti residui è accettabile.
+-Ready
+La documentazione per l’utente è pronta;
+Gli stakeholders hanno accettato il prodotto e vogliono che diventi operativo.
+
+Fine L7
