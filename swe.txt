@@ -6,10 +6,10 @@ L1
 
 -massimizzare efficacia ed efficienza: Riuscire a soddisfare obiettivi prefissati entro limiti certi di tempo e di sforzo.
 
--manutenibilità: è una qualità del software; 
-può essere correttiva per correggere difetti eventualmente rilevati; 
-adattiva per adattare il sistema alla variazione dei requisiti; 
-evolutiva per aggiungere funzionalità al sistema.
+manutenibilità: è una qualità del software; 
+->può essere correttiva per correggere difetti eventualmente rilevati; 
+->adattiva per adattare il sistema alla variazione dei requisiti; 
+->evolutiva per aggiungere funzionalità al sistema.
 
 -best practice: Prassi (modo di fare) che per esperienza e per studio abbia mostrato di garantire i migliori risultati in circostanze note e specifiche.
 
@@ -119,7 +119,6 @@ gestione operativa= utilizzo, installazione erogazione prodotti/servizi; manuten
 -processi organizzativi: per il lavoro collaborativo e l'ambiente, defiiscono la struttura organizzativa a precindere dal prodotto; gestione processi, gestione infrastrutture, miglioramento del processo, formazione del personale.
 
 Fine L2
-
 
 -modularità: I processi sono tra loro relazionati in modo chiaro e distinto.
 -coesione: Le attività di processo sono ben definite e correlate tra di loro (e così anche i compiti al loro interno).
@@ -236,14 +235,14 @@ Gli attributi di prodotto definiscono le caratteristiche richieste al sistema, R
 Gli attributi di processo pongono vincoli sui processi impiegati nel progetto, come farlo,requisiti di vincolo (realizzativo, normativo, contrattuale).
 
 I requisiti hanno diversa utilità strategica:
-Obbligatori Irrinunciabili per qualsiasi stakeholder;
-Desiderabili Non strettamente necessari ma a valore aggiunto riconoscibile;
-Opzionali Relativamente utili oppure contrattabili in seguito.
+-Obbligatori Irrinunciabili per qualsiasi stakeholder;
+-Desiderabili Non strettamente necessari ma a valore aggiunto riconoscibile;
+-Opzionali Relativamente utili oppure contrattabili in seguito.
 I requisiti non devono essere in conflitto tra loro.
 
 Distinguiamo tra requisiti utente (di alto livello) e requisiti di sistema (più dettagliati).
 
-l'incontro tra bisogno e soluzione viene chiamato tracciamento(l’incontro dei bisogni e dei requisiti,fornisce un dato quantitativo, indica quanti requisiti sono stati soddisfatti,nessuna funzionalità superflua, nessun componente ingiustificato,Tracciare un requisito significa motivarne l’esistenza, spiegando qual è l’origine di tale requisito, badando a garantire la necessità e la sufficienza di ogni requisito), serve al verificatore.
+L'incontro tra bisogno e soluzione viene chiamato tracciamento(l’incontro dei bisogni e dei requisiti,fornisce un dato quantitativo, indica quanti requisiti sono stati soddisfatti,nessuna funzionalità superflua, nessun componente ingiustificato,Tracciare un requisito significa motivarne l’esistenza, spiegando qual è l’origine di tale requisito, badando a garantire la necessità e la sufficienza di ogni requisito), serve al verificatore.
 
 -requisiti funzionali — descrivono i servizi che il sistema deve fornire 
 accertiamo il soddisfacimento dei requisiti funzionali attraverso test, dimostrazione formale e revisione.
@@ -401,26 +400,25 @@ Pattern Architetturali:
 
 
 Progettazione di dettaglio: attività
-- Definizione delle unità realizzative (moduli)
-Un carico di lavoro realizzabile dal singolo programmatore;
-Un “sottosistema” definito-> Un componente terminale (non ulteriormente decomponibile) o un loro aggregato;
-Un insieme di entità (tipi, dati, funzionalità) strettamente correlate -> Raccolti insieme in un package (come un insieme di classi) Nei sorgenti oppure nel codice oggetto (come in Java).
+-Definizione delle unità realizzative (moduli)
+ Un carico di lavoro realizzabile dal singolo programmatore;
+ Un “sottosistema” definito-> Un componente terminale (non ulteriormente decomponibile) o un loro aggregato;
+ Un insieme di entità (tipi, dati, funzionalità) strettamente correlate -> Raccolti insieme in un package (come un insieme di classi) Nei  sorgenti oppure nel codice oggetto (come in Java).
 -Specifica delle unità come insieme di moduli
-Definizione delle caratteristiche significative-> Da fissare nella progettazione;
-Dal nulla o tramite specializzazione di componenti esistenti.
+ Definizione delle caratteristiche significative-> Da fissare nella progettazione;
+ Dal nulla o tramite specializzazione di componenti esistenti.
 
 
 Progettazione di dettaglio: obiettivi
 -Assegnare unità a componenti
-Per organizzare il lavoro di programmazione;
-Per assicurare congruenza con l’architettura di sistema;
+ Per organizzare il lavoro di programmazione;
+ Per assicurare congruenza con l’architettura di sistema;
 -Produrre la documentazione necessaria.
-Perché la programmazione possa procedere in modo certo e disciplinato;
-Tracciamento per attribuire requisiti alle unità;
-Per definire le configurazioni ammissibili del sistema.
+ Perché la programmazione possa procedere in modo certo e disciplinato;
+ Tracciamento per attribuire requisiti alle unità;
+ Per definire le configurazioni ammissibili del sistema.
 -Definire gli strumenti per le prove di unità
-Casi di prova e componenti ausiliarie per la verifica unitaria e di
-integrazione.
+ Casi di prova e componenti ausiliarie per la verifica unitaria e di integrazione.
 
 Documentazione
 IEEE 1016:1998 Software Design Document
@@ -436,21 +434,261 @@ SEMAT (Software Engineering Method and Theory) drives a process to refound softw
 
 Stati di progresso per SEMAT
 -Architecture selected
-Selezione di una architettura tecnicamente adatta al problema:
-accordo sui criteri di selezione;
-Selezione delle tecnologie necessarie;
-Decisioni su buy, build, make.
+ Selezione di una architettura tecnicamente adatta al problema:
+  accordo sui criteri di selezione;
+  Selezione delle tecnologie necessarie;
+  Decisioni su buy, build, make.
 -Demonstrable
-Dimostrazione delle principali caratteristiche dell’architettura: gli stakeholder concordano;
-Decisione sulle principali interfacce e configurazioni di sistema.
+ Dimostrazione delle principali caratteristiche dell’architettura: gli stakeholder concordano;
+ Decisione sulle principali interfacce e configurazioni di sistema.
 -Usable
-Il sistema è utilizzabile e ha le caratteristiche desiderate;
-Il sistema può essere operato dagli utenti;
-Le funzionalità e le prestazioni richieste sono state verificate e
-validate;
-La quantità di difetti residui è accettabile.
+ Il sistema è utilizzabile e ha le caratteristiche desiderate;
+ Il sistema può essere operato dagli utenti;
+ Le funzionalità e le prestazioni richieste sono state verificate e validate;
+ La quantità di difetti residui è accettabile.
 -Ready
-La documentazione per l’utente è pronta;
-Gli stakeholders hanno accettato il prodotto e vogliono che diventi operativo.
+ La documentazione per l’utente è pronta;
+ Gli stakeholders hanno accettato il prodotto e vogliono che diventi operativo.
 
-Fine L7
+Fine L7 
+*********************************************************************************************
+L10 Qualità del software 
+
+Il concetto di qualità è correlato a quello di valutazione(comparativa o di conformità).
+La valutazione della qualità ha più destinatari, chi fa, chi usa, chi valuta.
+
+Qualità: Insieme delle caratteristiche di un'entità che ne determinano la capacità di soddisfare esigenze espresse e implicite
+(ISO 8402:1994, glossario dei termini, confluito in ISO 9000:2005)
+
+Sistema qualità: La struttura organizzativa, le responsabilità, le procedure, i procedimenti, e le risorse messe in atto per il perseguimento della qualità. (ISO 8402:1994 → ISO 9000:2005)
+
+Aree di intebento del sistema qualità:
+Intrinseca -> conformità ai requisiti, idoneità all'uso
+Relativa -> soddisfazione del cliente
+Quantitativa -> misura dle livello di qualità per controllo
+
+Ambiti del sistema qualità:
+Pianificazione -> definizione di politica e obiettivi
+Controllo
+Miglioramento continuo
+
+Pianificazione di qualità: Le attività del sistema qualità mirate a fissare gli obiettivi di qualità, i processi e le risorse necessarie per conseguirli (ISO 9000)
+Piano di qualità:
+Fissa le politiche aziendali per il perseguimento della qualità (visione orizzontale-trasversalmente sull'intera organizzazione)
+Determina gli obiettivi di quallità del singolo progetto (visione verticale-specificamente per un prodotto/servizio)
+Assume l'uso di opportuno strumenti e modalità di controllo
+
+Controllo di qualità: Le attività del sistema qualità pianificate e attuate al fine che il prodotto soddisfi i requisiti attesi (iso 9000)
+Controllo di qualità - Modalità e ambiti di controllo:
+comprensione e analisi del dominio
+verifica(di attività di  processo)
+validazione(di prodotto)
+quality assurance (preventiva, non correttiva)
+
+Impatto degli standard sulla qualità:
+-Raccolta organica di best practice
+ Per evitare la ripetizione di errori passati
+-Idonea alla concezione e attuazione di processi di quality assurance
+ Chiave del miglioramento continuo
+-Elemento di continuità
+ I nuovi assunti possono comprendere l’organizzazione aziendale a partire dagli standard di qualità in uso
+
+Il lato negativo dell'impatto degli standard:
+-Il personale può percepire gli standard come irrilevanti o bloccanti
+-L’attuazione di standard svincolata da controlli di efficacia sfocia in eccessi di burocrazia
+-Senza il supporto di strumenti informatici possono richiedere frustranti attività manuali
+
+
+Modelli della qualità SW:
+-Strumenti utili alla valutazione
+ Nella visione dell’utente -> Rispetto all’uso;
+ Nella visione della produzione -> Rispetto a qualifica, manutenzione, portabilità, riuso;
+ Nella visione della direzione -> Rispetto al rapporto costi/benefici.
+-Un solo modello per committenti e fornitori
+ Per uniformare la percezione e la valutazione della qualità.
+-Approccio comune a tutti i modelli
+ Definizione delle caratteristiche rilevanti;
+ Loro organizzazione in una struttura logica.
+-Modello di Boehm
+ 7 caratteristiche principali Suddivise in 15 sotto-caratteristiche misurabili tramite metriche ad-hoc.
+-ISO/IEC 9126:2001
+ Software engineering - Product quality - Part 1: Quality model;
+ 7 caratteristiche principali – 31 sotto-caratteristiche.
+
+L'iceberg della qualità software, la qualità esterna, visibile, è ciò che si osserva tramite esecuzione. E' causata dalla qualità interna. La qualità interna è ciò che deriva da scelte di progettazione, codifica, verifica e che si vede solo tramite revisione critica.
+
+Riferimenti normativi
+-Strumento di definizione e valutazione
+ Def: catalogazione sistematica delle caratteristiche rilevanti;
+ Val: definizione di metriche per la loro valutazione.
+-Def: modello della qualità SW (ISO/IEC 9126)
+ Visione esterna : relativa all’esecuzione del prodotto (Product requirements);
+ Visione interna : relativa al prodotto non in esecuzione (Product-component requirements);
+ Visione in uso : relativa alla percezione dell’utente / operatore(Customer requirements).
+-Valutazione della qualità SW (ISO/IEC 14598)
+ Misurazione quantitativa: «l’uso di una metrica per assegnare un valore (numeo o categoria) su una scala predefinita»;
+ Meglio: «il processo attraverso cui, secondo regole definite, simboli o numeri sono assegnati ad attributi di una entità»
+ [N.Fenton, Software metrics, a rigorous approach, 1997].
+-ISO/IEC 25000:2005 ha inglobato 9126 e 14598
+ SQuaRE: Software product Quality Requirements and Evaluation
+ Q requirements → Q model → Q management → Q measurement → Q evaluation.
+
+Softaware Metrics:
+-Any type of measurement which relates to a software system, process or documentation
+ Program: SLOC. Text: Gunning’s fog index. Effort: person-days 
+ Fog = (average number of words per sentence) + (number of words of 3 syllables or more) ) * 0.4
+-Allow the product and the process to be quantified
+-May be used to predict product attributes or to control the software process
+-Product metrics can be used for general predictions or to identify anomalous components
+
+Metrics Assumpions:
+-A software property or attribute can be measured.
+-A relationship exists between what we can measure and what we want to know
+ We only know how to measure internal attributes;
+ But we are often more interested in external attributes.
+-This relationship has been formalised and validated.
+-It may be difficult to relate what can be measured to desirable external quality attributes.
+
+Qualità nel ciclo di vita:
+-Qualità obiettivo(responsabilità del committente)
+ soddisfacimento dei requisiti misura di qualità parzialmente implicita.
+-Qualità richiesta(responsabilità del committente e del fornitore)
+ sancita contrattualmente misura di qualità esplicita.
+-Qualità progettata(responsabilità del fornitore).
+-Qualità stimata(responsabilità del fornitore).
+-Qualità consegnata(responsabilità del fornitore).
+
+Fine L10
+
+******************************************************************
+
+L11 Qualità di processo
+
+Qualità del processo come esigenza: organizzazione e diffusione interna sistematica; identificazione di prodotti intermedi e di momenti di verifica; riproducibilità dei risultati; quality assurance(non solo sistematica ma sempre più proattiva(preventiva)).
+Disposizione la miglioramento.
+
+Definire il processo: per controllarlo e renderlo più facilmente controllabile; per raccontarlo in maniera più convincente.
+Controllare il processo per migliorarlo: 
+efficacia -> prodotti conformi alle attise;
+efficienza -> minori costi a pari qualità di prodotto;
+esperienza -> apprendere dall'esperienza(anche dagli altri).
+Usare buoni strumenti di valutazione.
+
+Le Norme ISO 9000
+Certificaziioni iso 9001 nascono nella metà degli anni 90 per l avalutaione dei fornitori di prodotti o servizi. La famiglia delle norme comprende: 
+-iso 9000:2005 Fondamenti e Glossario-> che è radice di modelli di qualità neutri rispetto al dominio di applicazione
+-iso 9001:2000 Sistema di Gestione Qualità SGQ - requisiti-> con cui la visione iso 9000 è calata nei sistemi produttivi.
+-iso 9000-3:1997  Quality management and quality assurance standards –Part 3: Guidelines for the application of ISO 9001:1994 to the development, supply, installation and maintenance of computer software
+nel 2004 rimpiazzato da
+-ISO 90003:2004 : Software engineering – Guidelines for the
+application of ISO 9001:2000 to computer software
+-ISO 9004:2000 : Guida al miglioramento dei risultati
+
+I processi secondo iso9000
+Quattro categorie di processi:
+Responsabilità della direzione (5.) processi di decisione e controllo
+Gestione delle risorse (6.) processi di decisione e controllo
+Realizzazione del prodotto (7.) processi di produzione
+Misura, analisi e miglioramento (8.) processi di produzione
+
+SGQ come funzione aziendale. Responsabilità SGQ sono garantire qualità trasversalmente a settori e reparti, riferire direttamente alla direzione.
+
+Manuale della qualità
+Il documento che definisce il sistema di gestione della qualità di un’organizzazione (ISO 9000).  Visione operativa (orizzontale).
+Visione ad alto livello:
+Si integra con le procedure aziendali;
+Fissa gli obiettivi di qualità e le strategie attuative(esprime la politica azinedale rispetto alla qualità);
+Specifica le modalità per la sua evoluzione.
+
+Piano della Qualità (PdQ)
+Il documento che definisce gli elementi del SGQ(sistem agestione qualità) e le risorse che devono essere applicate in uno
+specifico caso (prodotto, processo, progetto) (ISO 9000)
+Taglio operativo:
+Concretizza il Manuale della Qualità a livello di progetto, dunque sotto specifici vincoli di tempo e di risorse;
+Può avere valenza contrattuale, nel progetto didattico è integrato nel Piano di Qualifica.
+
+Il PdQ in pratica
+Accertare disponibilità di: Analisi dei requisiti, Architettura e soluzioni tecniche, Pianificazione delle verifiche, Risultati delle verifiche.
+Conformità ai modelli fissati nelle norme.
+Accertare tracciabilità tra soluzioni e requisiti.
+Assicurare la buona pianificazione delle attività (per uso di risorse).
+
+
+Strumenti di valutazione
+
+1) SPY-SW Process Assessment and Improvement
+valutazione oggettiva dei processi di una organizzazione
+per darne un gioudizio di maturità e individuare azioni migliorative
+
+2) CMM capability maturity model 1987 -> CMMI
+
+Il passo successivo: CMMI
+CAPABILITY: misura di quanto è adeguato un processo per gli
+scopi per cui è stato definito.
+Caratteristica di un processo considerato singolarmente.
+Determina l’intorno del risultato (di efficienza ed efficacia) raggiungibile utilizzando quel processo.
+
+Un processo a basso livello di capability:
+Dipende da chi lo attua;
+Viene definito e seguito in modo opportunistico;
+Rende difficile prevederne l’esito, l’avanzamento e la qualità;
+Porta a compromessi tra funzionalità e qualità.
+
+Un processo ad alto livello di capability è seguito da tutti in modo disciplinato, sistematico e quantificabile.
+
+L’intelligenza dei processi di una organizzazione si chiama «governance».
+Efficacia, efficienza, manutenzione, visione.
+
+MATURITY: misura di quanto è governato il sistema dei processi
+dell’azienda.
+Caratteristica di un insieme di processi.
+I processi significativi sono quelli che rispondono alle esigenze di
+miglioramento continuo dell’organizzazione. Risulta dall’effetto combinato delle capability dei processi coinvolti.
+
+I cinque livelli di maturità sono:
+1'INITIAL process unpredictable, poorly controlled and reactive.
+2'MANAGED process characterized for projects and often reactive(Do).
+3'Defined process characterized for the organization and is proactive(Plan Do)
+4' QUANTITATIVELY MANAGED Process measured and controlled (Plan Check Do)
+5'OPTIMIZING focus on process improvement (PDCA)
+
+MODEL: insieme di requisiti via via più stringenti per valutare il
+percorso di miglioramento dei processi dell’azienda, utile anche a confrontare tra loro aziende diverse.
+
+INTEGRATION: architettura di integrazione delle diverse discipline (system, HW, SW) e tipologie di attività delle aziende.
+Sviluppo di prodotti e servizi (CMMI-DEV).
+Gestione ed erogazione di servizi (CMMI-SVC).
+Approvvigionamento di prodotti e servizi (CMMI-ACQ).
+
+
+3) SPICE e iso/iec 15504
+Software Process Improvement Capability dEtermination
+nato nel 1992 per armonizzare SPY con ISO/IEC 12207 e iso9001
+poi confluito in iso/iec tr 15504:1998
+
+15504 livelli e attributi
+0-1 performed
+1-2 managed
+2-3 established
+3-4 predictable
+4-5 optimizing
+
+evaluation da 0 a 5 e tutti i livelli 15504 possono essere 
+not implemented, partially implemnmented, largely implemented, fully implemneted.
+
+Metodologia di valutazione 15504
+-Identificazione dei portatori d’interesse
+ Destinatari dei risultati
+ Responsabili dei processi valutati
+ Responsabili delle attività di valutazione
+-Scelta tra valutazione e miglioramento
+ Risultato a uso esterno o interno
+ Valutazione formale o meno (self-assessment)
+-Definizione della portata
+ Processi inclusi nella valutazione
+ Indicatori di valutazione
+
+fine L11
+**************************************************************
+
+L12
