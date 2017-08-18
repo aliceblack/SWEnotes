@@ -912,4 +912,298 @@ Compatibilità ambientale
 
 ************************************
 
-L13
+L13 Verifica e validazione: Analisi Statica
+
+-Un SW di buona qualità deve possedere:
+Tutte le capacità funzionali specificate nei requisiti, che
+determinano cosa il sistema debba fare;
+Tutte le caratteristiche non funzionali necessarie per garantire che il sistema lavori sempre come previsto.
+-Ciò richiede il possesso verificato di determinate proprietà:
+Di costruzione (architettura, codifica, integrazione);
+D’uso;
+Di funzionamento.
+
+Nessun linguaggio di programmazione garantisce a priori la completa verificabilità di ogni programma scritto in esso perciò occorre cercare buon bilanciamento tra funzionalità (potere espressivo) e integrità (costo di verifica).
+Fissato il linguaggio di programmazione, occorre sceglierne i costrutti in funzione del loro impatto (Potere espressivo / costo di verifica).
+
+Programmi verificabili: 
+
+Serve adottare uno standard di codifica e un sottoinsieme di linguaggio consapevoli delle esigenze di verifica
+(L’uso di costrutti del linguaggio inadatti può compromettere la
+verificabilità del programma).
+La verifica solo retrospettiva (a valle dello
+sviluppo) è sovente inadeguata. Il costo di rilevazione e correzione di un errore è tanto maggiore quanto più avanzato è lo stadio di sviluppo.
+
+Posticipare la verifica in modalità as-lateas-possible
+Approccio retrospettivo -> correctness by correction
+
+Accompagnare la produzione con la verifica
+Approccio costruttivo -> correctness by construction
+
+Regolamentare l’uso del linguaggio di programmazione tramite regole da
+riflettere nelle Norme di Progetto:
+Per assicurare comportamento predicibile
+Per usare solidi e collaudati criteri di programmazione
+Per ragioni pragmatiche
+
+Comportamento predicibile:
+
+Codice sorgente senza ambiguità
+-Effetti laterali (p.es. di funzioni)
+Diverse invocazioni della stessa funzione producono risultati diversi.
+-Ordine di elaborazione e inizializzazione
+L’esito di un programma dipende dall’ordine di elaborazione entro e tra unità. Per esempio, l’attivazione dei thread in Java è fonte di impredicibilità.
+-Modalità di passaggio dei parametri
+La scelta di una modalità di passaggio (per valore, per riferimento) può influenzare l’esito dell’esecuzione.
+
+Criteri di programmazione:
+-Riflettere l’architettura nel codice
+Programmazione strutturata per esprimere componenti, moduli, unità come da progettazione, e facilitare il riuso.
+-Separare le interfacce dall’implementazione
+Fissare bene le interfacce già a partire dall’architettura logica.
+-Massimizzare l’incapsulazione (information hiding)
+Usare membri privati e metodi pubblici per l’accesso.
+-Usare tipi specializzati per specificare dati
+La composizione e la specializzazione aumentano il potere
+espressivo del sistema di tipi del programma.
+
+
+Considerazioni pragmatiche:
+-L’efficacia dei metodi di analisi è funzione della
+qualità di strutturazione del codice
+Esempio: un modulo con un solo punto di ingresso (pre-) e un
+solo punto di uscita (post-) è più facilmente analizzabile per il
+suo effetto sullo stato
+-La verifica di un programma relaziona frammenti
+di codice con frammenti di specifica
+La verificabilità è funzione inversa della dimensione del contesto
+(Conviene confinare gli ambiti (scope) e la visibilità);
+Una buona architettura facilita la verifica, Esempio: incapsulazione dello stato e controllo di accesso.
+
+Tracciamento
+Tracciamento per dimostrare completezza ed economicità della soluzion, cioè il Soddisfacimento di tutti i requisiti, nessuna funzionalità superflua, nessun componente ingiustificato.
+Il tracciamento ha luogo su ogni passaggio dello sviluppo (ramo discendente) e su ogni ramo della verifica (ramo ascendente).
+Il tracciamento può essere totalmente automatizzato.
+
+capitolato<-(tracciamento)-AR<-(tracciamneto)-ProgLogica<-(tracciamneto)-ProgDettaglio 
+^tracciamneto^
+collaudo<-test stema <-test integrazione <-test unità
+
+Particolari stili di programmazione facilitano il tracciamento
+Assegnare singoli requisiti elementari a singoli moduli del programma richiede una sola procedura di prova e rende più chiara e semplice la corrispondenza tra essi.
+Maggiore l’astrazione (potenza espressiva) di un costrutto del linguaggio maggiore è la quantità di codice oggetto eseguito per esso e maggiore l’onere di dimostrazione di corrispondenza
+Bassa astrazione: addizione tra interi,
+Alta astrazione: attivazione di un thread.
+
+10 tipi di analisi statica
+
+1) Analisi di flusso di controllo
+Accertare che il codice esegua nella sequenza specificata.
+Accertare ch eil codice si aben strutturato.
+Localizzare codice non raggiungibile.
+Identificazionne dei segmenti d'esecuzione che possano non terminare: divieto di modifica di variabili di controllo delle iterazioni;
+e l’analisi dell’albero delle chiamate (call-tree analysis) mostra se
+l’ordine di chiamata corrisponda alla specifica e rileva la
+presenza di ricorsione diretta o indiretta.
+
+2) Analisi di flusso dei dati
+Accertare che nessun cammino d’esecuzione del programma acceda a variabili prive di valore, usa i risultati dell’analisi di flusso di controllo insieme alle informazioni sulle modalità di accesso alle variabili (lettura, scrittura).
+Rilevare possibili anomalie per Esempio: più scritture successive senza letture intermedie.
+Attività complicata dalla presenza e dall’uso di dati globali raggiungibili da ogni parte del programma.
+
+3) Analisi di flusso d'informazione
+Determinare quali dipendenze tra ingressi e uscite risultino dall'esecuzione di una unità di codice.
+Le solo dipendenze consentite sono quelle previste dalla specifica(consente l'identificazione di effetti  laterali inattesi o indesiderati).
+Può limitarsi a un singolo modulo oppure estendere a più moduli correlati oppure anche all'intero sistema.
+
+4) Esecuzione simbolica
+Verificare proprietà del programma mediante manipolazione algebrica del codice sorgente (combinando tecniche di analisi di flusso di controllo, di flusso di dati e di flusso di informazione).
+Si esegue effettuanzdo "sostituzioni inverse" (sostotuendo a ogni LHS di un assegmaneto il suo RHS).
+Trasformando così il flusso sequenziale del programma in un insieme di assegmaneti paralleli le cui uscite sono funzione degli ingressi.
+
+5) Verifica formale del codice
+Provare la correttezza del codice sorgente rispetto alla specifica algebrica dei requisiti(esplorando tutte le esecuzioni possibili, non fattibile tramite analisi dinamica).
+Correttezza parziale->le condizioni di verifica sono espresse ocme teoremi la cui verità implica certe precondizioni in ingresso e certe postcondizioni in uscita, la prova di correttezza vale sotto l'ipotesi di terminazione del programma, la prova di correttezza totale richiede prova di terminazione.
+
+6) Analisi di limite
+Verificare che i dati del programma restino entro i limiti del loro tipo e della precisione desiderata quindi:
+ Analisi di overflow e underflow
+ Analisi di errori di arrotondamento
+ Rispetto dei limiti (range checking)
+ Analisi di limite di strutture.
+Linguaggi evoluti assegnano limiti statici a tipi discreti consentendo verifiche automatiche sulle corrispondenti variabili (Più problematico con tipi enumerati e reali).
+
+7) Analisi d'uso di stack
+Lo stack è l’area di memoria che i sottoprogrammi usano per immagazzinare dati locali, temporanei e indirizzi di ritorno generati dal compilatore: ogni flusso di controllo (thread) ha un suo proprio stack; l’ampiezza dello stack cresce con l’annidamento di
+chiamate di procedura.
+Determinare la massima domanda di stack richiesta da un’esecuzione in relazione con la dimensione dell’area di memoria assegnata al processo.
+Verificare che non vi possa essere collisione tra stack e heap per qualche esecuzione.
+L’heap invece è l’area di memoria globale, l’ampiezza dell’heap è fissata a configurazione e poi consumata con la creazione dinamica di oggetti.
+
+8) Analisi temporale
+Studiare le proprietà temporali richieste ed esibite dalle dipendenze delle uscite dagli ingressi del programma (Sapere di produrre il valore giusto al momento giusto).
+Limiti espressivi dei linguaggi e delle tecniche di programmazione complicano questa analisi (Iterazioni prive di limite statico (while), ricorso sistematico a strutture dati dinamiche (new), ecc).
+
+9) Analisi d'interferenza
+Mostrare l’assenza di effetti di interferenza tra parti separate (“partizioni”) del sistema (non necessariamente limitate a componenti software).
+Veicoli tipici di interferenza sono Memoria dinamica (heap) condivisa, dove parti separate di programma lasciano traccia di dati abbandonati ma non distrutti (memory leak), l'azzeramento preventivo delle pagine di memoria riutilizzate (p.es. NT v5.x), l' I/O e altri dispositivi programmabili con effetti a livello sistema (esempio: watchdog).
+
+10) Analisi di codice oggetto
+Assicurareche il codice oggetto da eseguire sia una traduzione corretto del codice sorgente corrispondente e ch enessun errore od omissione siano stati introdotti dal compilatore, viene ancora effettuata manualmente, viene facilitata dalle informazioni di corrispondenza prodotte dal compilatore.
+
+
+Analizzabilità del sistema:
+L’analisi statica costruisce modelli astratti del SW in esame.
+Questi modelli rappresentano ogni programma come un grafo diretto e ne studiano i cammini possibili.
+Le transizioni tra stati (archi) hanno etichette che descrivono proprietà sintattiche o semantiche dell’istruzione corrispondente.
+La presenza di flussi di eccezione e di risoluzione dinamica di chiamata (dispatching) complica notevolmente la struttura del grafo.
+Ciascun flusso di controllo (thread) viene rappresentato e analizzato separatamente assumendo non-interferenza!
+
+**************************************
+
+L14 Verifica e validazione: Analisi Dinamica
+
+Analisi dinamica = test (prova), attività che comporta esecuzione dell’oggetto di verifica.
+Verifica dinamica del comportamento del programma su un insieme finito di casi, selezionati nel dominio (in generale, infinito) di tutte le esecuzioni possibili. Ciascun caso di prova specifica i valori di ingresso e lo stato iniziale del sistema.
+Ciascun caso di prova deve produrre un esito decidibile (oracolo) verificato rispetto a un comportamento atteso.
+
+E' Parte essenziale del processo di verifica. Produce una misura della qualità del sistema, aumenta il valore di qualità del sistema identificandone e rimuovendone difetti.
+Il suo inizio non deve essere differito al termine delle attività di codifica.  Le sue esigenze devono essere tenute in conto nella progettazione del sistema.
+
+Oggetto delle prove sono Unità, aggregati, sistema completo.
+
+Fault(Guasto/difetto)->Rrror(errore)->failure(malfunzionalmento)
+
+A failure occurs when the behavior of a system deviates from what is specified for it.  Failures result from "problems" internal to the system which eventually manifest in the system's external behavior.
+
+These "problems" are called Errors and their mechanical or algorithmic or conceptual cause are termed faults, Errors are states of the system, Faults are what causes the error to exist.
+Systems are hierarchical compositions of components which are themselves systems.
+
+-Obiettivo delle prove
+Accettazione, qualifica, conformità, regressione
+Installazione nell’ambiente di prova, controllo prestazioni
+-Vincoli di progetto
+Processi, prodotti, risorse, competenze
+Stima e controllo dei costi, criteri di terminazione
+-Attività di prova
+Pianificazione, specifica e sviluppo dei casi di prova
+Esecuzione, valutazione, trattamento dei problemi
+
+La strategia di prova richiede di bilanciare la quantità minima di casi di prova sufficienti a fornire certezza adeguate sulla qualità del prodotto (Fattore governato da criteri tecnici).
+La quantità massima di sforzo, tempo e risorse disponibile per la verifica è un fattore governato da criteri gestionali.
+Legge del rendimento decrescente -> Diminishing returns
+
+Oggetto della prova:
+Il sistema nel suo complesso (Test Sistema). Parti di esso, in relazione funzionale, d’uso, di comportamento, di struttura (Test Integrazione). Singole unità (Test Unità).
+Obiettivo della prova:
+Specificato per ogni caso di prova .In termini precisi e quantitativi
+Varia al variare dell’oggetto della prova. Il PdQ risponde alla domanda "quali e quante prove".
+
+La “provabilità” del SW va assicurata a monte dello sviluppo, non a valle della codifica. Progettazione architetturale e di dettaglio raffinate per assicurare provabilità. La complessità è nemica della provabilità.
+
+Una singola prova non basta, i risultati valgono solo per quella esecuzione e non possono essere generalizzati, la prova deve essere ripetibile.
+(Rileva malfunzionamenti indicando la presenza di guasti, in generale non può provarne l’assenza).
+Le prove sono costose, richiedono molte risorse (tempo, persone, infrastrutture), necessitano di un processo definito, richiedono attività di ricerca, analisi, correzione.
+
+Attività di prova 
+specifica->codifica->compilazione->esecuzione->analisi.
+
+Elementi di una prova
+Caso di prova (test case) è una Tripla <ingresso, uscita, ambiente>
+(L’ambiente include l’oggetto della prova)
+Una Batteria di prove (test suite) è un Insieme (sequenza) di casi di prova.
+Una Procedura di prova è Il procedimento (automatico o manuale) per eseguire, registrare, analizzare e valutare i risultati di prove.
+Prova = <Procedura, Batteria di prove>
+
+[p17 oracolo]
+
+Unità software composta da uno o più moduli, Modulo = componente elementare di progetto di dettaglio (quindi non necessita di test di unità).
+Unità e moduli sono determinati in progettazione di dettaglio e quindi anche il piano di TU. La TU completa quando ha verificato tutte le unità.
+(~2/3 dei difetti identificati tramite analisi
+dinamica vengono rilevati in TU, 50% di essi viene identificato da prove strutturali(white-box)).
+
+Per ogni test di unità si definiscono: Oggetto, strategia, risorse necessarie, piano di esecuzione.
+Si ha Statement Coverage al 100% quando i test effettuati sull’unità sono sufficienti a eseguire – complessivamente – almeno una volta tutte le linee di comando di ciascuno dei moduli dell’unità.
+Si ha Branch Coverage al 100% quando ciascun ramo del flusso di controllo viene attraversato – complessivamente – almeno una volta.
+Lo statement coverage è meno potente del branch coverage.
+
+Copertura 
+Definizione (DO-178B)
+Condizione=Espressione booleana semplice non contenente al suo interno ulteriori condizioni combinate da operatori booleani.
+Decisione=Espressione composta contenente condizioni combinate da operatori booleani.
+Al crescere del numero di condizioni all’interno di una decisione il numero di test necessario a massimizzare il condition coverage diventa proibitivo.
+DO-178B richiede allora di massimizzare il modified decision condition coverage, MCDC implica branch coverage.
+Requisiti DO-178B (software di avionica) richiede che tutte le decisioni siano soggette a test e tutti i loro possibili esiti siano effettivamente prodotti, che ciascuna condizione all’interno di una decisione assuma entrambi gli esiti (vero/falso) almeno una volta.
+Occorre allora verificare se e come ogni singola condizione possa da sola determinare tutti gli esiti possibili della decisione e non basta più provare l’intera decisione come vera
+o falsa!
+
+Test di Unità: Test funzionale (black-box)
+Da solo non può accertare correttezza e completezza della
+logica interna dell’unità (Va necessariamente integrato con test strutturale).
+Fa riferimento alla specifica dell’unità e utilizza dati di ingresso capaci di provocare l’esito atteso.
+Ciascun insieme di dati di ingresso che producono un dato
+comportamento funzionale costituisce un caso di prova.
+Classi di equivalenza invece che infiniti valori di ingresso (Valori nella medesima classe producono lo stesso comportamento).
+
+Test di Unità: Test strutturale (white-box)
+Verifica la logica interna del codice dell’unità cercando massima copertura.
+Ciascuna prova deve essere progettato per attivare ogni cammino di esecuzione all’interno del modulo.
+Ciascun insieme di dati di ingresso che attivano un percorso costituiscono un caso di prova.
+L’uso di debugger può agevolarne l’esecuzione ma non esonera dalla progettazione dei casi di prova.
+
+Strategie di integrazione
+Assemblare parti in modo incrementale aggiungendo solo a insiemi ben verificati, i difetti rilevati in un test di integrazione sono più probabilmente da attribuirsi alla parte ultima aggiunta.
+Assemblare produttori prima dei consumatori, la verifica dei primi fornisce ai secondi flusso di controllo (chiamate) e flusso dei dati corretti.
+Assemblare in modo che ogni passo di integrazione sia reversibile, consente di retrocedere verso uno stato noto e sicuro.
+
+Integrazione incrementale
+Bottom-up
+Si sviluppano e si integrano prima le parti con minore dipendenza funzionale e maggiore utilità, poi si risale l’albero delle dipendenze, questa strategia riduce il numero di stub necessari al test ma porta più tardi alla disponibilità di funzionalità di alto livello.
+Top-down
+Si sviluppano prima le parti più esterne, quelle poste sulle foglie
+dell’albero delle dipendenze e poi si scende, questa strategia comporta l’uso di molti stub ma integra a partire dalla funzionalità di più alto livello.
+
+Test di Integrazione
+Si applica alle componenti specificate nella
+progettazione architetturale, la loro integrazione costituisce il sistema completo.
+La Logica di integrazione funzionale seleziona le funzionalità da integrare, identifica le componenti che svolgono quelle funzionalità,ordina le componenti per numero di dipendenze crescente
+(Dipendenze nel flusso di controllo (chiamata) e nel flusso di dati) ed esegue l’integrazione in quell’ordine.
+I problemi rilevati durante Test di Integrazione manifestano difetti di progettazione o insufficiente qualità nei test di unità.
+Test di Integrazione ha tanti test quanto ne servono per accertare che tutti i dati scambiati attraverso ciascun interfaccia siano conformi alla loro specifica e per accertare che tutti i flussi di controllo previsti in specifica siano stati effettivamente realizzati e provati.
+
+Test di sistema
+Verifica il comportamento dinamico del sistema completo rispetto ai requisiti SW.
+Ha inizio con il completamento del test di integrazione.
+È inerentemente funzionale (black-box) (non dovrebbe richiedere conoscenza della logica interna del software).
+
+
+Altri tipi di test
+
+Test di regressione
+Ripetizione selettiva di TIntegrazione (e poi di TSistema) integrando solo parti che abbiano precedentemente superato TUnità-> nel repository di progetto devono stare solo unità SW di questo tipo.
+Servono Per accertare che modifiche intervenute per correzione o
+estensione di parti non comportino errori nel sistema (Può essere molto oneroso).
+I contenuti del test di regressione vanno decisi nel momento in cui si approvano modifiche al SW.
+
+Test di accettazione (collaudo) Accertano il soddisfacimento dei requisiti utente.
+
+Fattore di copertura
+-Quanto la prova esercita il prodotto:
+Copertura funzionale (Rispetto alla percentuale di funzionalità esercitate come viste dall’esterno)
+Copertura strutturale (branch, condition) (Rispetto alla percentuale di logica interna del codice esercitata).
+-Una misura della bontà di una prova
+Copertura del 100% non prova assenza di difetti, il 100% di copertura può essere irraggiungibile (per Costi eccessivi, codice sorgente non disponibile, codice irraggiungile non eliminabile, copertura esaustiva dei cicli).
+
+Maturità di prodotto
+-Valutare il grado di evoluzione del prodotto
+Quanto il prodotto migliora in seguito alle prove
+Quanto diminuisce la densità dei difetti
+Quanto può costare la scoperta del prossimo difetto
+-Le tecniche correnti sono spesso empiriche
+Sotto l’influenza del modello code-and-fix
+-Definire un modello ideale
+Modello base: il numero di difetti del SW è una costante iniziale
+Modello logaritmico: le modifiche introducono difetti
+
+***********************************************************
+
