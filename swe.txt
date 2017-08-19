@@ -1207,3 +1207,186 @@ Modello logaritmico: le modifiche introducono difetti
 
 ***********************************************************
 
+L15 misurazione del software
+
+Finalità della misura è Rendere oggettivi i risultati degli esperimenti effettuati e Avere dati affidabili su cui basare modelli matematici.
+L’oggettività della misura implica ripetibilità, confrontabilità, confidenza.
+Ogni misura ha limiti intrinseci: l'Approssimazione nella misura di realtà fisiche e l'Astrazione nella misura di valutazione o di stima di concetti.
+
+Misurazione
+Processo che assegna numeri o simboli ad attributi di entità del mondo reale per descriverle secondo regole definite.
+
+Misura
+Risultato della misurazione.
+Assegnazione empirica e oggettiva di un valore (numerico o simbolo) a un’entità per caratterizzarne un attributo specifico.
+
+Metrica = insieme di regole
+Per fissare le entità da misurare, gli attributi rilevanti, l’unità di misura, la procedura per assegnare e interpretare i valori.
+
+Per caratteristiche difficilmente misurabili La misura desiderata può essere ottenuta indirettamente a partire da altre misure ottenute tramite stime o predizioni.
+Servono metriche per stimare caratteristiche Identificando gli attributi misurabili e Determinando indicatori per le caratteristiche non misurabili.
+
+Metrica secondo il glossario SWE di IEEE: Misura quantitativa del grado di possesso di uno specifico attributo da parte di un sistema, componente, processo.
+
+Obiettivi della misurazione nel SW
+-Valutare lo stato di
+ Progetti – stime, preventivi e consuntivi di costo e di tempo
+ Prodotti – qualità
+ Processi – qualità (capability, maturity), miglioramenti
+ Risorse – consumo
+-Interpretare e cogliere tendenze
+ In modo proattivo piuttosto che reattivo
+-Decidere azioni correttive
+ Magari privilegiando il maggiore effetto per il minor costo
+
+Le metriche nella produzione
+-Strumenti di valutazione e controllo
+-Entità da misurare
+ Processi insiemi correlati di procedure astratte
+ Progetti attività concrete legate a tempo e risorse
+ Prodotti beni e servizi in uscita dai progetti
+ Risorse elementi impiegati e consumati dal progetto
+-Categorie di attributi
+ Interni misurabili rispetto alle entità
+ Esterni misurabili rispetto all’ambiente
+
+Processo di misurazione-Strategie e discipline
+-(Come definire) Cosa misurare
+ISO/IEC 15939 Software Measurement Process
+Measurement Information Model: descrive i valori di misurazione da
+produrre e le relazioni tra loro
+Measurement Process Model: descrive il processo di misurazione
+-Come misurare -> Linee guida (p.es. Practical Software Measurement)
+-Cosa e perché -> CMMI
+
+Bisogni informativi
+Secondo ISO 15939 “the information needs are based on goals, constraints, risks, and problems which originate from the technical and mgmt processes”.
+CMMI suggerisce di determinarli nelle seguenti aree
+ Requirements Management
+ Design & Implementation
+ Verification & Validation (V&V)
+ Quality Assurance
+ Configuration Management
+ Project Management
+ Risk analysis & decision analysis
+ Training
+
+Metriche software
+-Problema aperto
+ Il software è difficile da misurare
+ Il software ha caratteristiche multiformi
+ Le tecnologie cambiano rapidamente
+ L’ambiente di esecuzione ha una grande influenza
+-Tipi di metriche
+ Del prodotto in sé - quanto è grande
+ Delle sue funzionalità - cosa deve fare e come lo fa
+ Del suo comportamento - cosa succede e quando
+
+Software Metrics, Norman Fenton https://archive.org/details/softwaremetricsr00fent
+
+Metriche progettuali
+- Grado di coesione -> Bieman, IEEE TSE 20:8, 1994
+- Grado di accoppiamento -> Dhama, Elseview JSS 29:1, 1995
+- Complessità strutturale -> Funzione del fan-out
+- Complessità del flusso dati -> Funzione del # di parametri di ingresso e uscita, e della CS
+- Complessità del sistema -> Funzione di CS e CFD
+
+Metriche di programmazione
+- SLOC: la metrica più intuitiva e più usata
+- Conteggio dei costrutti / comandi
+ Semplificato e adattato alle funzionalità degli editor
+ Usata per derivare informazioni di costo e produttività
+ Rapportata alla densità di commenti
+- Limiti
+ Dipendente da sintassi e potenza espressiva del linguaggio
+ Dipendente dallo stile di codifica
+
+Complessità ciclomatica
+
+proposta da Thimas McCabe nel 1976, è indipendente dal linguaggio di programmazione.
+Complessità del flusso di controllo: funzione dei possibili cammini indipendenti all'interno di un singolo sottoprogramma.
+Limiti: fallibilità dimostrata(nonostante ciò ancora largamente usata), costosa da applicare prima di progettare il codice in dettaglio.
+Il valore rilevato va confrontato con soglie preffisate.
+Corrisponde al numero di casi di prova necessari per verificare ogni possibile esito di ogni ramo di decisione della procedura: misura la complessità del flusso di controllo ma non la complessità del flusso dei dati; il grado di fanIn e fanOut applicato ai dati può aiutare a stimare la coplessità del flusso dei dati; meglio calcolarlo usando strumenti automatici.
+
+Definizione algebrica costruita sopra il grafo di controllo G che descrive una procedura:
+v(G)=e-n+p numero dei percorsi lineari in G
+con e numeri di archi(flusso), n numero dei nodi(espressioni o comandi), p numero delle componenti connesse da ogni arco(p=2 per esecuzione sequnziale, 1 predecessore, 1 successore)
+Per esempio
+3-4+2=1 o->o->o->o 3archi 4nodi 2componendi connesse ad ogni arco
+
+Errore in difetto: la complessità reale è maggiore di quell amisurata.
+Errore in eccesso: la complessità reale è inferiore a quella misurata.
+
+Standard per misure funzionali
+
+-ISO/IEC 14143 – Functional size measurement
+ Definire la terminologia del settore
+ Definire i criteri per valutare le metriche funzionali
+ Definire i criteri per accreditare i professionisti che le usano
+-Concetti definiti
+ Accuratezza di una misura funzionale
+ Accuratezza di una metrica funzionale
+ Ripetibilità e riproducibilità di una metrica funzionale
+ Soglia di sensibilità di una metrica funzionale
+ Applicabilità a un dominio funzionale
+
+Le metriche tecniche dipendono dalla tecnologia Che è variabile nel tempo! Sono Utili come vista interna per stimare il costo di produzione.
+
+ISO/IEC 14143 (functional size measurement) aiuta a orientarsi verso metriche funzionali, Che possono fornire valori di misura più significativi, Utili come vista esterna per stimare il prezzo di vendita, La misurazione è resa indipendente dalla fase del progetto, A meno delle richieste esplicite di cambiamento.
+
+
+Misure Interne e Misure Esterne
+-Esempi di misure interne:
+Numero di requisiti, loro volatilità
+Function Points, Use Case Points
+Coesione, accoppiamento, fan-in / fan-out
+SLoC, complessità ciclomatica
+Grado di copertura delle prove
+-Esempi di misure esterne
+ISO/IEC 9126-1 (confluito in 25010:2015): valutazione delle 6
+caratteristiche di qualità di prodotto
+
+Function Point
+
+Allan J. Albrecht e John E. Gaffney, IEEE TSE 1983
+Non misura il software ma le sue entità logico-funzionali.
+Dimensione di progetto e di produttività in relazione ai requisiti funzionali.
+Indipendente dal linguaggio di programmazione.
+International Function Point User Group (IFPUG).
+Conta le funzionalità differenziate per categorie e pesate in base ad
+attributi del prodotto.
+http://www.totalmetrics.com/scope-project-sizing-software/EditionsOf-SCOPE/scope-viewer
+Misurazioni diverse possono dare risultati diversi.
+Corrispondente interessante negli Use Case Points tynerblain.com/blog/2007/02/12/software-cost-estimation-ucp-1/ .
+
+Le componenti misurate dal function point sono
+External Input EI processo elementare a seguito del quale dati entrano nella componente misurata.
+External Output EO processo elementare a seguito del quale dati escono dalla componente.
+External Inquiry EQ processo elementare per il quale specifici dati interni sono richiesti alla componente e da essa emessi.
+Internal Logical File ILF gruppo d dati correlati interni alla componente e alimentati tramite External Input.
+External Interface File EIF gruppo di dati correlati esterni alla componente e usati come riferimento.
+
+function point
+Unadjusted FP - UFP(grezzo) ciascuna xomponente vinene assoiata a uno specifico grado di complessità, ogni componente pesa quanto il suo grado di complessità.
+Adjusted FP - AFP(raffinato) ha 14 fattori d'influenza IF, ciscono con peso 0,00 e 0,05, AFP=UFPx(0,65+sommatoriaIF)
+
+Metriche per Software OO
+
+Occorrono metriche dedicate, Le metriche tradizionali non sono accurate.
+Complessità funzionale e complessità strutturale
+Non linearità del codice. La misura SLOC non funziona!
+Uso di strutture e funzioni complesse, McCabe non funziona come misura assoluta!
+Metriche per i metodi, Metriche per le classi, Metriche per i sistemi.
+
+Metrica per i metodi
+Un metodo è sostanzialmente procedurale, si può usare McCabe come metrica di base, corretta per tenere conto di interfaccie e variabili locali.
+Complessità di un metodo MC=w1MIC+w2MLVC+w3MCC
+con MIC complessità dell'interaccia del metodo, MLVC complessità delle variabili locali, MCC complessità ciclomatica del codice, wi peso determinato statisticamente.
+
+Metrica per le classi
+Complessità di una classe CC=w4CCL+w5CCI
+Proprietà della metrica per le classi: Considera solo la parte locale della classe, Considera la complessità dell’uso delle classi negli attributi.
+
+fine L15
+***************************************************************
