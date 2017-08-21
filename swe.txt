@@ -1,6 +1,6 @@
 L1
 
--efficacia: garantire la qualità dei prodotti, determinata dal grado di conformità del prodotto rispetto alle norme vigenti e agli obiettivi prefissati. Conformità->obiettivi e strategie->pdq.
+-efficacia: garantire la qualità dei prodotti, determinata dal grado di conformità del prodotto rispetto alle norme vigenti e agli obiettivi prefissati. Conformità -> obiettivi e strategie -> pdq.
 
 -efficienza: contenere i costi e i tempi di produzione, inversamente proporzionale alla quantità di risorse impiegate nell’esecuzione delle attività richieste.
 
@@ -76,6 +76,27 @@ Attività principali per ogni ciclo: Definizione degli obiettivi, Analisi dei ri
 -configurazione: Se un insieme è composto di parti, quali esse sono e il modo in cui esse devono stare insieme è detto “configurazione”,
 ogni sistema fatto di parti va gestito con controllo di configurazione. Ogni configuration item ha una sua versione(storia).
 
+[[[da fiup risposta verbosa:
+  - configurazione
+    - definizione Un insieme è composto di parti; il modo in cui tali parti stanno assieme viene detto configurazione.
+    - controllo della configurazione
+Se ho una configurazione, è necessario farne un controllo per gestire la configurazione, usufruendo di regole per la configurazione che devono essere pianificate.
+    - gestione della configurazione
+Lo standard ISO/IEC 12207 definisce un processo di supporto dedicato alla configurazione: si tratta del processo organizzativo gestione della configurazione.
+Tale processo è bene che sia altamente automatizzato, ad esempio ricorrendo all'utilizzo di sistemi di build automatici, riguardo alle attività previste da questo processo, ovvero: l'identificazione dei CI che compongono una configurazione, la gestione di baseline (intesi come insieme di CI consolidato ad una specifica milestone), la gestione delle modifiche attraverso issue tracking per renderle traccibili e il controllo di versione.
+    - configuration item
+Un configuration item rappresenta un singolo elemento, oggetto della configurazione del prodotto; ogni CI deve avere identità unica.
+  - versionamento:
+    - controllo di versione
+Tutto ciò che è in manutenzione ha una storia, che va gestita mediante un controllo di versione. E' importante notare che non controllo la versione del prodotto, bensì la versione dei CI del prodotto.
+Il controllo di versione si appoggia su un repository, e permette in tal modo di lavorare localmente evintando sovrascritture accidentali (check-out) e condividere le modifiche nello spazio comune (check-in)
+    - repository
+Un repository è dato da un filesystem con una root, ed è un database centralizzato contenente i vari CI di ogni baseline, nella loro storia completa. Nel repository voglio farci entrare solamente prodotti che rispettino le metriche.
+    - versionamento
+E' un'attività del controllo di configurazione.
+Due termini importanti quando parliamo di versione, sono repository, come già visto, e commit, che rapprenta un atto tracciato attraverso il quale una persona può affermare di aver completato il proprio lavoro (metodo push). Per controllare i prodotti che entrano nella repository è bene ricorrere a meccanismi in cui candido il mio lavoro, con una verifica automatizzata su tale lavoro.
+]]]
+
 -Prototipo: 
 Serve per provare e scegliere soluzioni Può essere “usa e getta” (nel caso delle iterazioni) oppure fornire stati di incremento (baseline). Necessità di fornire / utilità di cercare evidenza preliminare di fattibilità. Baseline è stato di incremento, punto di arrivo tecnico dal quale non scendo, risultato sulla quale baso l'incremento.[baseline più avanti]
 
@@ -137,22 +158,21 @@ L4
 
 -log è l'evento che lascia la traccia
 -push/pull alternative di richiesta infomrazione
-Effettuare misurazioni allo scopo di massimizzare l'efficineza ricevendo infomrazioni in modo push.
+Effettuare misurazioni allo scopo di massimizzare l'efficineza ricevendo informazioni in modo push.
 
 -ruolo = funzione aziendale assegnata a progetto.
 -profilo professionale = competenze tecnologiche, esperienza, requisiti per assunzione di un ruolo in un progetto.
 
 Ruoli
--responsabile: rappresenta il progetto, responsabilità di pianificazione, risorse umane, gestione costi. Redazione e manutenzione di regole e
-procedure di lavoro.
+-responsabile: rappresenta il progetto, responsabilità di pianificazione, risorse umane, gestione costi. Redazione e manutenzione di regole e procedure di lavoro.
 -amministratore: amministra risorse e infrastrutture, gestione documentazione, controllo versione+configurazione, risoluzione problemi legati alla gestione processi. Predispone strumenti e regole.
 -analista: analisi requisiti, capisce il problmea non sviluppa la soluzione.
 -progettista: sviluppa la soluzione.
 -programmatore: puro esecutore.
--verificatore: verifica ciò ch eè stato fatto dagli altri, che sia corretto e soddisfi le attese.
+-verificatore: verifica ciò che è stato fatto dagli altri, che sia corretto e soddisfi le attese.
 
 -Work Breakdown Structure: scomporre attività in sottoattività. Attribuibili ad individui.
--Gantt: rappresentare durata, confronto stime e progressi, sequanzialità e parallelismo (non adatto per dipendenze).
+-Gantt: rappresentare durata, confronto stime e progressi, sequenzialità e parallelismo (non adatto per dipendenze).
 -PERT: dipendenze temporali tra attività, slack. Un tale diagramma è un grafo orientato dove gli archi rappresentano le attività, mentre i nodi sono degli eventi. Ogni evento ha una data minima a partire da cui può accadere e una data massima oltre la quale esso ritarda gli eventi successivi; la differenza tra questi due tempi è detta slack time.
 
 COCOMO constructive cost model m/p=CxMxD^s
@@ -185,7 +205,7 @@ I documenti sono utili se e solo se sono sempre disponibili, chiaramente identif
 La loro diffusione deve essere controllata, I destinatari devono essere chiaramente identificati, Ogni documento ha una sua lista di distribuzione, L’amministratore gestisce le liste di distribuzione e ne assicura il rispetto.
 
 Milestone: obbligo/opportunità misuratore di avanzamento di progresso. Indica un punto nel tempo (calendario). Importanti traguardi intermedi nello svolgimento del progetto. Ogni milestone di calendario è associata a uno specifico insieme di baseline. Indica importanti traguardi intermedi nello svolgimento del progetto.
-Le milestone servono per fissare dei punti di avanzamento significativi rispetto agli obiettivi stabiliti e al tempo a disposizione. Un progettatore assegna milestone che hanno una distanza tale per cui arrivarci significa raggiungere un punto importante: infatti, ogni milestone corrispone a una specifica configurazione del sistema. Ogni milestone ha un proprio nome se associata e una configurazione detta baseline.
+Le milestone servono per fissare dei punti di avanzamento significativi rispetto agli obiettivi stabiliti e al tempo a disposizione. Un progettista assegna milestone che hanno una distanza tale per cui arrivarci significa raggiungere un punto importante: infatti, ogni milestone corrispone a una specifica configurazione del sistema. Ogni milestone ha un proprio nome se associata a una configurazione detta baseline.
 
 Baseline:  è stato di incremento, punto di arrivo tecnico dal quale non scendo, risultato sulla quale baso l'incremento. Campobase punto di arrivo tecnico, vicino alla fine, realizzazione stabile, risultato sulla quale basare il successivo incremento, si può tornare a baseline precedenti. E' il prodotto tangibile, associato alle milestone.
 Quello di baseline indica un punto d’arrivo tecnico dal quale non si retrocede; la baseline è fatta di elementi della configurazione e, poiché ogni parte è versionata, possiamo conoscere la differenza tra una baseline e l’altra. Una baseline è qualcosa di stabile — non usa e getta! — e sta in un repository; serve da base per gli avanzamenti futuri e può essere cambiata solo tramite procedure di controllo di cambiamento.
@@ -218,7 +238,7 @@ Individuiamo due categorie di norme: regole (sottoposte a verifica) e raccomanda
 -Qualifica = Verifica+Validazione due processi distinti la cui unione da la qualifica.
 -Verifica: Accertare che l’esecuzione delle attività di processo non abbia introdotto errori "did i build the system right". Rivolta ai processi ma viene svolta sui loro prodotti per accertare il rispetto di regole, convenzioni e procedure; accerta il rispetto di norme e procedure.
 -Validazione: "did i build the right system"Accertare che il prodotto realizzato corrisponda alle attese, rivolto ai prodotti finali; che prodotto finale sia conforme, soddisfi requisiti.
-Self fulfilling prophecy, dico prima so che accade, attività preventive di verifica che diano informazione, applicata la modo in cui lavoro.
+Self fulfilling prophecy, dico prima so che accade, attività preventive di verifica che diano informazione, applicata al modo in cui lavoro.
 
 Requisiti
 Condizione (capability) necessaria a un utente per risolvere un problema o raggiungere un obiettivo
