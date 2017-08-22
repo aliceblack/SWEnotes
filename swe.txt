@@ -380,6 +380,8 @@ Spring (http://www.springsource.org/about) per architetture di business con MVC
 Struts (http://struts.apache.org/) per Web Apps in stile MVC
 Swing per GUI, ecc.
 
+Framework - Struttura di supporto su cui un software può essere organizzato e progettato.
+
 Pattern Architetturali
 -Soluzioni fattorizzate per problemi ricorrenti
 Metodo tipico dell’ingegneria classica
@@ -397,6 +399,12 @@ Definisce una funzionalità lasciando gradi di libertà d’uso (Ha corrisponden
 Il corrispondente architetturale degli algoritmi che invece specificano procedimenti di soluzione
 Rilevante nel SW a partire dalla pubblicazione di “Design Patterns” della Gang of Four 
 Per la progettazione a livello sistema si usano pattern architetturali!
+
+Design Pattern - Soluzione progettuale generale a un problema ricorrente. Una descrizione o un
+modello da applicare per risolvere un problema che può presentarsi in diverse
+situazioni durante la progettazione e lo sviluppo del software.
+
+
 
 Pattern Architetturali:
 -Architettura “three-tier” (a livelli)
