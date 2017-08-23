@@ -150,9 +150,9 @@ Fine L2
 
 -PDCA: Organizzazione interna dei processi incentrata sul principio del miglioramento continuo (W.A. Shewhard, W.E. Deming)
 Pianificare (Plan): definire attività, scadenze, responsabilità, risorse utili a raggiungere specifici obiettivi di miglioramento, gestione risorse!
-Eseguire (Do): eseguire le attività secondo P, realizzazione prodotto!
-Valutare (Check): verificare l’esito delle azioni di miglioramento rispetto alle attese, misurazione e analisi. Si studiano i risultati della fase precedente (do) e li si cofrontano con gli obiettivi individuati nella prima fase (plan).
-Agire (Act): applicare correzioni alle carenze rilevate e standardizzare quanto è andato bene.
+Eseguire (Do): eseguire le attività secondo P, realizzazione prodotto! Esecuzione della pinaificazione.
+Valutare (Check): verificare l’esito delle azioni di miglioramento rispetto alle attese, misurazione e analisi. Si studiano i risultati della fase precedente (do) e li si cofrontano con gli obiettivi individuati nella prima fase (plan). Valutazione dei risultati ottenuti e confronto con le previsioni della pianificazione.
+Agire (Act): applicare correzioni alle carenze rilevate e standardizzare quanto è andato bene. Correzione delle criticità, presa d'atto di risultati positivi con relativa standardizzazione dei processi corretti.
 
 L4
 
@@ -334,7 +334,7 @@ Qualità di una buona architettura
 +Incapsulazione(information hiding): l'interno delle componenti non è visibile all'esterno. Le componenti sono “black box”, I suoi clienti ne conoscono solo l’interfaccia. La loro specifica nasconde gli algoritmi e le strutture dati usati al loro interno. Benefici: L’esterno non può fare assunzioni sull’interno; Cresce la manutenibilità; Diminuendo le dipendenze aumentano le opportunità di riuso.
 
 +Coesione: le parti che stanno assieme hanno gli stessi obiettivi.
-[l’orientamento ad oggetti aiuta molto a raggiungere la coesione : SOLID]
+L’orientamento ad oggetti aiuta molto a raggiungere la coesione : SOLID.
 Proprietà interna di singole componenti, Funzionalità “vicine” devono stare nella stessa componente, La modularità spinge a decomporre il grande in piccolo, La ricerca di coesione aiuta sia a decomporre che a porre un limite inferiore alla decomposizione.
 La coesione va massimizzata!
 Benefici: Maggiore manutenibilità e riusabilità Minore interdipendenza fra componenti, Maggiore comprensione dell’architettura del sistema.
@@ -342,6 +342,7 @@ Vi sono svariati tipi di coesione buona:
 - Funzionale, quando le parti concorrono al medesimo specifico compito;
 - Sequenziale, quando alcune azioni sono «vicine» ad altre per ordine di esecuzione e dunque conviene tenerle insieme;
 - Informativa, quando le parti agiscono sulla stessa unità di informazione.
+La coesione è una "forza attrattiva", "cose che stanno assieme", disgregate non hanno sognificato. Importante perchè voglio fare operazioni con il massimo sia dell'efficienza che dell'efficacia, ho ciò che mi serve, so farlo al meglio. Ci puntiamo al massimo, è un desiderio, ma è difficle raggioungerla. Oggetto(offrire metodi/funzionalità significative), oggetto che svolga funzione utile ha tali parti e non ha funzioni accessorie (toJSON() del quarto appello), se si ha qualcosa in più non è coeso. Né più né meno.
 
 teoria [coesione, le parti sono raccolte in gruppi che concorrono agli stessi obiettivi e sono strettamente e necessariamente coinvolte, è un indicatore di necessità dei membri che ci sono dentro, se ne manca uno non sono sufficienti, se ce n’è uno in più è superfluo.]
 
@@ -647,6 +648,20 @@ Conformità ai modelli fissati nelle norme.
 Accertare tracciabilità tra soluzioni e requisiti.
 Assicurare la buona pianificazione delle attività (per uso di risorse).
 
+Ramo discendente pianificazione, mettere in moto per fare cose quando viene il momento, premesse. 
+Pianificazione ha a che fare con la strategia, come raggiungere gliobiettivi, il pdq ha obiettivo di massima conformità misurata tramite la qualità, qualità dei processi e del prodotto che realizziamo. Efficacia, obiettivi di qualità misurabili. Obiettivo dell'efficiacia= conformità, ovvero qualità del prodotto e dei processi. Quali sono gli obiettivi, tenere conto di come li sto raggiungendo(verifica).
+Il pdq comincia enunciando obiettivi di qualità in modo QUANTITATIVO. Obiettivo e punteggi minimi.
+Le metriche e le loro tecniche di misurazione vanno nelle norme (che ocsa misuro e come lo misuro). Il pdq contine gli obiettivi metrici. La prima parte contiene l'enunciazione degli obiettivi.
+Il piano di progetto ha come obioettivo l'uso ottimo delle risorse=massima efficienza misurata con consuntivo di periodo e consuntivo finale.
+Non tutti i processi hanno obiettivi di qualità perchè alcuni usati troppo poco. Si utilizzano metriche proattive non reattive.
+Quando verifichiamo? il pdq riceve risorse dal pdp, coerenti non ridondanti.
+La seconda parte enuncia cosa si verifica e quando rimandando al pdp pe ri dettagli. Il prventivo a finire si può modificare in base la consuntivo di periodo.
+La seconda parte espone rendiconto ed esiti. Resoconto dei punti di verifica (revisioni interne, revisioni di progresso, ecc) fondamentalmente è un appendice. Copertura dei requisiti(progettazione, codice, implementazione, valudazione), latre metruche di copertura(test). Vedere se sono stati raggiunti gli obiettivi di qualità.
+
+La seconda parte
+Ramo ascendente si fa ciò che si è pianificato, fatte le cose -> resoconti, risultati, criticità.
+
+
 
 Strumenti di valutazione
 
@@ -867,61 +882,51 @@ Attività di quality assurance
  "Quali strumenti per quali caratteristiche?"
  La qualità in uso è valutata a posteriori
 
-1 Funzionalità
--Dimostrabile tramite prove
-Analisi statica come attività preliminare.
--Liste di controllo rispetto ai relativi requisiti
-Completezza ed economicità (Tutte le funzionalità richieste per tutti e soli i componenti necessari),
-Interoperabilità(Accertata la compatibilità tra le soluzioni realizzative adottate),
-Sicurezza del prodotto e dei suoi componenti,
-Adesione alle norme e alle prescrizioni.
--Valutazione empirica di accuratezza
+Qualità interna: qualità della progettazione del codice sorgente.
+Qualità Esterna: qualità in fase di test ed esecuzione.
+7• Qualità in uso qualità per il prodotto finale quali efficacia, produttività, soddisfazione, sicurezza, di cui si avrà esperienza nella fase di utilizzo del prodotto.
+
+Qualità esterna e qualità interna si suddividono ulteriormente nelle seguenti categorie di carat-
+teristiche:
+
+1• Funzionalità: soddisfacimento delle esigenze prestabilite attraverso:
+– conformità: adesione del prodotto a standard e convenzioni di funzionalità;
+– appropriatezza: il prodotto offre funzionalità appropriate al soddisfacimento delle esigenze;
+– accuratezza: il prodotto produce esiti congrui alle aspettative;
+– interoperabilità: il software si integra correttamente nel sistema;
+– sicurezza: il prodotto è robusto rispetto alle minacce esterne, non offre vulnerabilità.
+
+2• Affidabilità: assicurare prestazioni nelle diverse circostanze. Comprende:
+– tolleranza agli errori: il prodotto mantiene la consistenza interna rispetto alle modifiche autorizzate e ai malfunzionamenti;
+– maturità: il prodotto è predisposto a non causare errori o produrre esiti non corretti;
+– aderenza: il prodotto è predisposto ad aderire agli standard e alle convenzioni;
+– recuperabilità: a seguito di malfunzionamenti il prodotto è capace di riabilitare le prestazioni e ricostruire i dati colpiti da errori.
+
+3• Efficienza: impiego di risorse ragionevoli nell’esecuzione delle sue attività. Include:
+– conformità: adesione del prodotto a standard e convenzioni di efficienza;
+– utilizzo delle risorse: congruo utilizzo delle risorse da parte del prodotto per il raggiungimento degli scopi prefissati;
+– comportamento rispetto al tempo: il software produce risultati in un opportuno lasso di tempo.
+
+4• Usabilità: grado di adoperabilità del prodotto, secondo:
+– conformità: adesione del prodotto a standard e convenzioni di usabilità;
+– comprensibilità: il prodotto è autoesplicativo o di facile utilizzo;
+– apprendibilità: in che misura il prodotto richiede l’apprendimento di concetti per il suo utilizzo;
+– operabilità: il prodotto richiede un certo grado di approntamenti per l’utilizzo;
+– attrattiva: il prodotto genera una certa spinta al suo utilizzo.
+
+5• Manutenibilità: predisposizione alla correzione, all’adattamento e all’evoluzione. Ne fanno parte:
+– analizzabilità: il prodotto può essere ispezionato;
+– modificabilità: il prodotto può essere modificato;
+– stabilità: il prodotto è resiliente alle modifiche;
+– testabilità: il prodotto può essere testato.
+
+5• Portabilità: il prodotto mantiene le sue proprietà in qualsiasi sistema sia eseguito. Im- plica:
+– conformità: adesione del prodotto a standard e convenzioni di portabilità;
+– installabilità: il prodotto è disponibile in vari ambienti;
+– adattabilità: il prodotto non richiede modifiche per il funzionamento in diversi ambienti;
+– sostituibilità: il prodotto utilizzato come alternativa ad un altro produce gli stessi risultati.
 
 
-2 Affidabilità
--Dimostrabile tramite combinazione di prove e analisi statica
-Analisi statica come attività preliminare
-Prove a completamento
--Liste di controllo rispetto ai relativi requisiti
-Robustezza
-Capacità di ripristino e recupero da errori
-Adesione alle norme e alle prescrizioni
--Valutazione empirica di maturità
-
-3 Usabilità
--Le prove sono imprescindibili
-Analisi statica come attività complementare
--Liste di controllo rispetto ai manuali d’uso
-Comprensibilità
-Apprendibilità
-Adesione a norme e prescrizioni
--Questionari sottomessi agli utenti
-Facilità e piacevolezza d’uso
-
-4 Efficienza
--Le prove sono necessarie
-Analisi statica come attività complementare
--Liste di controllo rispetto alle norme di codifica
-Quelle che puntano all’efficienza nel tempo e nello spazio
--Margini di miglioramento e confidenza
-L’efficienza provata fornisce confidenza nel prodotto
-L’analisi statica fornisce indicazioni specifiche sui margini di miglioramento prestazionale
-
-5 Manutenibilità
--Analisi statica come strumento ideale
--Liste di controllo
-Rispetto a specifiche norme di codifica (Analizzabilità e Modificabilità)
-Rispetto alle prove per accertarne (Ripetibilità e Verificabilità)
--Prove di stabilità
-
-6 Portabilità
--Analisi statica come strumento ideale
--Liste di controllo rispetto a specifiche norme di codifica (Adattabilità)
--Prove come strumento complementare
-Facilità d’installazione e di sostituzione
-Compatibilità ambientale
-
-7 qualità in uso
 
 ************************************
 
@@ -1380,3 +1385,115 @@ Proprietà della metrica per le classi: Considera solo la parte locale della cla
 
 fine L15
 ***************************************************************
+The 5 SOLID principles
+
+S - Single Responsibility Principle ( A class should have one, and only one, reason to change)
+O - Open‐Close Principle (You should be able to extend a classes behavior, without modifying it)
+L - Liskov Substitution Principle ( Derived classes must be substitutable for their base classes)
+I - Interface Segregation Principle (Make fine grained interfaces that are client specific)
+D - Dependency Inversion Principle (Depend on abstractions, not on concretions)
+
+Structured programming and Object‐oriented programming are Two of the most important revolution of IT industry,
+(Everyone uses OO languages, but Today's programmers are unaware of the principles that are the foundation of Object Orientation).
+
+Dependency management is The art of making code flexible, robust, and reusable (It’s too easy to get a bunch of tangled legacy code).
+SOLID principles, is A set of class design principles that helps to manage dependency.
+
+
+1 - SINGLE RESPONSIBILITY PRINCIPLE ( A class should have one, and only one, reason to change)
+
+Also known as cohesion, is the Functional relatedness of the elements of a module. A module should have only one reason to change, We call this reason of change responsibility.
+
+Coupled responsibilities:
+Changes to one responsibility may impair or inhibit the class’ ability to meet the others.
+Fragile design that break in unexpected ways (Recompilation, test, deploy, ecc).
+
+What is really a responsibility? An axis of change is only an axis of change if the changes actually occur. The context of the application is also important, Needless complexity Complessità inutile.
+
+Nell'esercizio 
+MArketApplication->Bill<-MarketRESTService (quarto appello)
+Bill possiede items:List e addItem(item):void, getTotal():double,  toJson():string. 
+Per dividere il cambiamento si può pe rprimo dividere il metodo toJSON(), non stacchiamo getTotal() perchè ha bisogno delle informazioni, come la rappresentazione degli item, contenute nell'pggetto, quindi condivide lo stesso asse di cambiamento dell'oggetto. Posso modificare toJSON() senza modificare gli altri metodi.
+
+MarketApplication -> Bill <- TransfomBill <- MarketRESTService
+toJSON() metodo di transfomBill e gli latri metodi, Bill non contiene più toJSON(). I due client Market rimangono come prima.
+
+Nella domanda
+Il modo in cui si aggrega (COESIONE) non può essere casuale, va regolato con principi di aggregazione: "metti insieme le cose che se cambieranno, cambieranno insieme". Architettura è buona se facilmente comprensibile e manutenibile. Manutenzione quindi modifica(economica non stravolgimento).[Stakeholder unico] Single Responsibility Principle è un criterio per arrivae a soddifare la coesione. Ricette concrete: i pattern soecializzano le funzioni quindi aiutano la coesione.
+Aggregare delle funzionalità -> le procedure (che all'inizio non esistevano) sono utili perchè coese. 
+
+2 - OPEN‐CLOSE PRINCIPLE (You should be able to extend a classes behavior, without modifying it)
+
+There are many heuristics in OOD. "All member variables should be private”, “Global variables should be avoided”, “Using run time type identification (RTTI) is dangerous”. 
+Software entities should be open for extension, but closed for modification. You extend behaviour adding new code, not changing the old. The Open‐Close Principle underlines these heuristics.
+
+Abstraction is the key. Abstract types are the fixed part, derivate classes points of extension.
+
+client ---- Server
+Client class must be changed to name the new server class.
+client ---- AbstractServer <--- Server
+If we want Client objects to use a different server class, then a new
+derivative of the AbstractServer class can be created. The Client class can remain unchanged.
+
+Shape possiede draw() e drawAll()
+Square e Circle derivano da Shape
+That conforms to openclose principle. To extend the behavior of the drawAll to draw a new kind of shape, all we need do is add a new derivative of the Shape class.
+
+Programs conforming to OCP do not experience «cascade of changes», 
+Changes are obtained adding new code.
+
+No program can be 100% closed, Closure must be strategic! 
+Closure can be gained through abstraction Using interfaces and polimorphim (The draw abstract method in the Shape class).
+...or can be gained in a «data‐driven» fashion, Sometimes using information configured in external structure can be the only solution
+(What if we want to draw shapes in a specific order that
+depends from type!?).
+
+Conventions and heuristics derived from Open Closed Principle:
+Make all member variables private: When the member variables of a class change, every function that depends upon them must be changed!
+Encapsulation, No global variables (ever), No module that depends upon a global variable can be closed against any other module that might write to that variable. There are very few cases that can disobey (i.e. cin, cout). RTTI is dangerous.
+
+3 - LISKOV SUBSTITUTION PRINCIPLE ( Derived classes must be substitutable for their base classes)
+Abstraction and polymorphism At the basis of OOD and OCP. What are the characteristics of the best inheritance hierarchies? What are the traps?
+
+Liskov Substitution Principle: "Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it". Is a special case of LSP.
+Violating this principle means violationg OpenClosedPrinciple (Function that uses a pointer or reference to a base class, but must know about all the derivatives of that base class).
+
+A model, viewed in isolation, can not be meaningfully validated. The validity of a model can only be expressed in terms of its clients. What counts is extrinsic public behavior, Behavior that clients depend upon. The relation between Square and Rectangle is not a IS‐A relation in OOD.
+
+Design by contract "...when redefining a routine [in a derivative], you may only replace its precondition by a weaker one, and its postcondition by a stronger one". Methods of classes declare preconditions and postconditions (invariants).
+
+Design by contract
+In a derivate class preconditions must not be stronger than in the base class, Using base class interface a client knows only base class preconditions.
+In a derivate class postconditions must be stronger than in the base class, Derived class must conform to all base class prostcondition.
+The behaviors and outputs must not violate any of the constraints established for the base class.
+(Java and JVM base languages have assert primitive. C++ does not have anything such this).
+
+4 - INTERFACE SEGREGATION PRINCIPLE (Make fine grained interfaces that are client specific)
+
+"Clients should not be forced to depend upon interfaces that they do
+not use".
+
+Reducing coupling means to depend upon interfaces, not implementations. The risk is to depend upon a «fat» or «polluted» interfaces. Fat interfaces are not cohesive: Methods can be broken up into groups of functions, Clients must view only the part they are interested to.
+
+Separation by delegation: Object form the Adapter design pattern. 
+Separation through multiple inheritance: Class form the Adapter design pattern.
+
+Violation Example: The Door class now depends upon TimerClient. Not all varieties of Door need timing. Moreover, the applications that use those derivatives will have to import the definition of the TimerClient class, even though it is not used. The interface of Door has been polluted with an interface that it does not require. Each time a new interface is added to the base class, that interface must be implemented in derived classes. Default implementations violate the
+Liskov Substitution Principle (LSP). Sometimes it is the client that forces a change to an interface, Also the Door interface have to be changed, Clients that does not need timer doors will also be affected, The result is a inadvertent involontario coupling between all the
+clients.
+
+5 - DEPENDENCY INVERSION PRINCIPLE (Depend on abstractions, not on concretions) terzo appello
+
+"High level modules should not depend upon low level modules. Both should depend upon abstractions. Abstractions should not depend upon details. Details should depend upon abstractions".
+
+Important policy decisions are in high level modules. It’s these modules we want to be able to reuse. Template method design pattern.
+In layered application, each layer should expose a proper level of abstraction (interface). A naive implementation can force wrong dependency among modules.
+
+ReadKeyboard <- copy -> WritePaper
+Consider a simple program that is charged with the task of copying characters typed on a keyboard to a printer. “Read keyboard” and “Write printer” are quite reusable. However the “Copy” module is not reusable in any context that does not involve keyboard and printer.
+
+KeyboardReader --- Read <- copy -> Write --- PrinterWriter
+We have performed dependency inversion. the dependencies have been inverted; the “Copy” class depends upon abstractions, and the detailed readers and writers depend upon the same abstractions.
+Now we can reuse the “Copy” class, independently of the “Keyboard Reader” and the “Printer Writer”. 
+
+Module containing high level policy should be independent upon low level details modules. We have use abstraction to limit dependency.
