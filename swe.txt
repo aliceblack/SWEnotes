@@ -27,7 +27,7 @@ Approccio ingegneristico: Disciplinato, sistematico, quantificabile.
 -Progettazione: Definire come bisogna farlo.
 -Realizzazione: Farlo con la massima efficienza e la massima efficacia.
 -Verifica e validazione: Assicurare che quanto fatto soddisfi i requisiti e non contenga errori.
--Manutenzione: Assicurare pieno utilizzabilità del SW fino al momento del suo ritiro.
+-Manutenzione: Assicurare piena utilizzabilità del SW fino al momento del suo ritiro.
 
 L2(+L1)
 -ciclo di vita del sw: Gli stati che il prodotto assume dal concepimento al ritiro.
@@ -51,19 +51,18 @@ L’adozione di un modello richiede un sistema di qualità per garantire e misur
 
 ---incrementali: producono valore ad ogni incremento, funzionalità essenziali sono sviluppate nei primi incrementi. Incremento è quantificabile.
 Incremento = Procedere per incrementi significa aggiungere a un impianto base.
----iterativi adattamento. iterazione non qunatificabile. 
+---iterativi adattamento. iterazione non quantificabile. 
 Iterazione = Procedere per iterazioni significa operare raffinamenti o rivisitazioni.
 
--incrementale:  approssimare la soluzione per incrementi, requisiti utente sono classificati e trattati in base alla loro importanza strategica.
-[ogni incremento attraversa tutte le fasi del modello sequenziale]
+-incrementale:  approssimare la soluzione per incrementi, requisiti utente sono classificati e trattati in base alla loro importanza strategica. [Ogni incremento attraversa tutte le fasi del modello sequenziale]
 
 -evolutivo: rispondere a bisogni non inizialmente preventivabili, può richiedere il rilascio e il mantenimento di più versioni del prodotto
 simultaneamente disponibili usabili dall'utente, può richiedere rilascio più versioni. Riattraversamento più fasi di ciclo di vita. 
 
 -a spirale: Cicli interni rapidi e ripetuti, dedicati ad analisi e sviluppi prototipali(ANALISI DEI RISCHI). Cicli esterni che aderiscono a un qualsiasi altro modello standard di ciclo di vita. Ad ogni ciclo si analizzano i rischi e si compiono simulazioni. 
-Attività principali per ogni ciclo: Definizione degli obiettivi, Analisi dei rischi, Sviluppo e validazione, Pianificazione(prossimo ciclo).
+Attività principali per ogni ciclo: Definizione degli obiettivi, Analisi dei rischi, Sviluppo e validazione, Pianificazione (del prossimo ciclo).
 
--a componenti: molto di quello che ci serve fare è già stato fatto e molto di quello che faremo ci potrà servire ancora. Riuso sistematico di componenti preesistenti proprie oppure “off-the-shelf”.
+-a componenti: molto di quello che ci serve fare è già stato fatto e molto di quello che faremo ci potrà servire ancora. Riuso sistematico di componenti preesistenti proprie oppure “off-the-shelf”. [vedi riuso]
 
 -agili: Backlog, sprint, daily scrum, incrementi devono essere funzionanti, pezzi realizzabili.
 1) Individuals and interactions over processes and tools L’eccessiva rigidità ostacola l’emergere del valore
@@ -77,31 +76,37 @@ Attività principali per ogni ciclo: Definizione degli obiettivi, Analisi dei ri
 ogni sistema fatto di parti va gestito con controllo di configurazione. Ogni configuration item ha una sua versione(storia).
 
 [[[da fiup risposta verbosa:
-  - configurazione
-    - definizione Un insieme è composto di parti; il modo in cui tali parti stanno assieme viene detto configurazione.
-    - controllo della configurazione
+- configurazione
+definizione Un insieme è composto di parti; il modo in cui tali parti stanno assieme viene detto configurazione.
+
+- controllo della configurazione
 Se ho una configurazione, è necessario farne un controllo per gestire la configurazione, usufruendo di regole per la configurazione che devono essere pianificate.
-    - gestione della configurazione
+
+- gestione della configurazione
 Lo standard ISO/IEC 12207 definisce un processo di supporto dedicato alla configurazione: si tratta del processo organizzativo gestione della configurazione.
 Tale processo è bene che sia altamente automatizzato, ad esempio ricorrendo all'utilizzo di sistemi di build automatici, riguardo alle attività previste da questo processo, ovvero: l'identificazione dei CI che compongono una configurazione, la gestione di baseline (intesi come insieme di CI consolidato ad una specifica milestone), la gestione delle modifiche attraverso issue tracking per renderle traccibili e il controllo di versione.
-    - configuration item
+
+- configuration item
 Un configuration item rappresenta un singolo elemento, oggetto della configurazione del prodotto; ogni CI deve avere identità unica.
-  - versionamento:
-    - controllo di versione
+
+- versionamento:
+- controllo di versione
 Tutto ciò che è in manutenzione ha una storia, che va gestita mediante un controllo di versione. E' importante notare che non controllo la versione del prodotto, bensì la versione dei CI del prodotto.
 Il controllo di versione si appoggia su un repository, e permette in tal modo di lavorare localmente evintando sovrascritture accidentali (check-out) e condividere le modifiche nello spazio comune (check-in)
-    - repository
+
+- repository
 Un repository è dato da un filesystem con una root, ed è un database centralizzato contenente i vari CI di ogni baseline, nella loro storia completa. Nel repository voglio farci entrare solamente prodotti che rispettino le metriche.
-    - versionamento
+
+- versionamento
 E' un'attività del controllo di configurazione.
 Due termini importanti quando parliamo di versione, sono repository, come già visto, e commit, che rapprenta un atto tracciato attraverso il quale una persona può affermare di aver completato il proprio lavoro (metodo push). Per controllare i prodotti che entrano nella repository è bene ricorrere a meccanismi in cui candido il mio lavoro, con una verifica automatizzata su tale lavoro.
 ]]]
 
 -Prototipo: 
-Serve per provare e scegliere soluzioni Può essere “usa e getta” (nel caso delle iterazioni) oppure fornire stati di incremento (baseline). Necessità di fornire / utilità di cercare evidenza preliminare di fattibilità. Baseline è stato di incremento, punto di arrivo tecnico dal quale non scendo, risultato sulla quale baso l'incremento.[baseline più avanti]
+Serve per provare e scegliere soluzioni Può essere “usa e getta” (nel caso delle iterazioni) oppure fornire stati di incremento (baseline). Necessità di fornire / utilità di cercare evidenza preliminare di fattibilità. Baseline è stato di incremento, punto di arrivo tecnico dal quale non scendo, risultato sulla quale baso l'incremento. [vedi baseline]
 
 -Riuso: 
-Occasionale (opportunistico) – «copia-incolla» a basso costo e scarso impatto, 
+Occasionale (opportunistico) – «copia-incolla» a basso costo e scarso impatto. 
 Sistematico (per progetto, per prodotto, per azienda) a maggior costo ma maggior impatto.
 (da L7)
 
@@ -111,19 +116,17 @@ Capitalizzare sottosistemi già esistenti
 ->Ottenendo minor costo realizzativo
 ->Ottenendo minor costo di verifica
 
-Problemi del riuso
+Problemi del riuso:
 ->Progettare per riuso è più difficile (Bisogna anticipare bisogni futuri) 
-->Progettare con riuso non è immediato (Bisogna minimizzare le modifiche alle componenti riusati per non perderne il valore)
+->Progettare con riuso non è immediato (Bisogna minimizzare le modifiche alle componenti riusate per non perderne il valore)
 
-Riuso è Puro costo nel breve periodo
-->Diventa risparmio nel medio termine (quindi è un investimento) 
-
+Riuso è Puro costo nel breve periodo -> Diventa risparmio nel medio termine (quindi è un investimento) 
 
 
 -processo: Un processo è un insieme di attività correlate e coese che trasformano ingressi in uscite secondo regole fissate, consumando risorse nel farlo (Glossario ISO 9000).
 
 -Lo standard come modello di azione: Definizione e imposizione di procedure, Definizione e proposizione di processi da specializzare
--Lo standard come modello di valutazione Identificazione di “best practice” CMMI, SPICE, ISO/IEC TR 15504.
+-Lo standard come modello di valutazione: Identificazione di “best practice” CMMI, SPICE, ISO/IEC TR 15504.
 
 Standard di processo: è un cuneo che non mi fa scendere, non peggioro.
 
@@ -132,8 +135,7 @@ Standard di processo: è un cuneo che non mi fa scendere, non peggioro.
 
 ISO/IEC 12207 è il modello più noto e riferito per lo standard (generale) di processo, modello ad alto livello, identifica i processi dello sviluppo software, descrive i processi in termini di attività e compiti elementari, i prodotti dei processi, specifica le responsabilità sui processi.
 
--processi primari: se ci sono allora esiste il progetto; acquisizione= gestione fornitori; fornitura= gestione rapporto con clienti; sviluppo;
-gestione operativa= utilizzo, installazione erogazione prodotti/servizi; manutenzione= correzione adattamento evoluzione.
+-processi primari: se ci sono allora esiste il progetto; acquisizione= gestione fornitori; fornitura= gestione rapporto con clienti; sviluppo; gestione operativa= utilizzo, installazione erogazione prodotti/servizi; manutenzione= correzione adattamento evoluzione.
 
 -processi di supporto: procedure da chiamare quando  ne si ha il bisogno; documentazione, accertamento qualità, gestione versioni e configurazione, qualità=verifica+validazione, revisioni congiunte con il cliente, verifiche ispettive interne, risoluzione dei problemi.
 
@@ -142,7 +144,7 @@ gestione operativa= utilizzo, installazione erogazione prodotti/servizi; manuten
 Fine L2
 
 -modularità: I processi sono tra loro relazionati in modo chiaro e distinto.
--coesione: Le attività di processo sono ben definite e correlate tra di loro (e così anche i compiti al loro interno).
+-coesione: Le attività di processo sono ben definite e correlate tra di loro (e così anche i compiti al loro interno).[vedi coesione]
 
 -Processo standard: Riferimento di base generico, condiviso tra aziende diverse nello stesso dominio applicativo.
 -Processo definito: Specializzazione di processo standard, per adattarlo alle specifiche esigenze e caratteristiche aziendali.
@@ -157,8 +159,8 @@ Agire (Act): applicare correzioni alle carenze rilevate e standardizzare quanto 
 L4
 
 -log è l'evento che lascia la traccia
--push/pull alternative di richiesta infomrazione
-Effettuare misurazioni allo scopo di massimizzare l'efficineza ricevendo informazioni in modo push.
+-push/pull alternative di richiesta informazione
+Effettuare misurazioni allo scopo di massimizzare l'efficienza ricevendo informazioni in modo push.
 
 -ruolo = funzione aziendale assegnata a progetto.
 -profilo professionale = competenze tecnologiche, esperienza, requisiti per assunzione di un ruolo in un progetto.
@@ -210,8 +212,7 @@ Le milestone servono per fissare dei punti di avanzamento significativi rispetto
 Baseline:  è stato di incremento, punto di arrivo tecnico dal quale non scendo, risultato sulla quale baso l'incremento. Campobase punto di arrivo tecnico, vicino alla fine, realizzazione stabile, risultato sulla quale basare il successivo incremento, si può tornare a baseline precedenti. E' il prodotto tangibile, associato alle milestone.
 Quello di baseline indica un punto d’arrivo tecnico dal quale non si retrocede; la baseline è fatta di elementi della configurazione e, poiché ogni parte è versionata, possiamo conoscere la differenza tra una baseline e l’altra. Una baseline è qualcosa di stabile — non usa e getta! — e sta in un repository; serve da base per gli avanzamenti futuri e può essere cambiata solo tramite procedure di controllo di cambiamento.
 2. La baseline è una versione approvata di un configuration item che è stata formalmente progettata e definita (/sistemata, ”fixed”) in un momento specifico del ciclo di vita del configuration item. [SWEBok 6-7]
-3. Una baseline è una collezione delle versioni dei componenti che compongono un sistema. Le baseline sono controllate, il che significa che le versioni dei componenti che compongono il sistema non possono essere cambiate e che è sempre possibile ricreare
-una baseline a partire dai componenti che la costituiscono. [Sommerville, pag 684]
+3. Una baseline è una collezione delle versioni dei componenti che compongono un sistema. Le baseline sono controllate, il che significa che le versioni dei componenti che compongono il sistema non possono essere cambiate e che è sempre possibile ricreare una baseline a partire dai componenti che la costituiscono. [Sommerville, pag 684]
 
 Controllo di baseline: L’insieme di CI consolidato a una specifica milestone.
 Base verificata, approvata e garantita per la prosecuzione dello sviluppo.
@@ -221,9 +222,8 @@ Le richieste di modifiche hanno origine da Utenti (difetti o mancanze) Sviluppat
 Le richieste di modifica vanno sottoposte a un rigoroso processo di analisi, decisione, realizzazione e verifica.
 Ogni richiesta/proposta di modifica va inoltrata in modo formale -> Change request.
 Di ogni richiesta di modifica bisogna tenere traccia di: Issue tracking(sistema informatico che gestisce e registra delle liste di richieste di assistenza o di problemi) o ticketing e di Stato corrente ed eventuale esito chiusura.
-Si appoggia su un repository->DB centralizzato nel quale risiedono - individualmente – tutti i CI di ogni baseline nella loro storia completa.
-Permette a ciascuno di lavorare su vecchi e nuovi CI senza rischio di sovrascritture accidentali e di condividere il lavorato nello spazio comune.
-Verifica la bontà di ogni modifica di baseline = Build.
+Si appoggia su un repository->DB centralizzato nel quale risiedono - individualmente – tutti i CI di ogni baseline nella loro storia completa. Permette a ciascuno di lavorare su vecchi e nuovi CI senza rischio di sovrascritture accidentali e di condividere il lavorato nello spazio comune.
+Build = Verifica la bontà di ogni modifica di baseline.
 Versione = Istanza di prodotto funzionalmente distinta dalle altre.
 Variante = Istanza di prodotto funzionalmente identica ad altre ma diversa per caratteristiche non funzionali.
 Rilascio (release) = Istanza di prodotto resa disponibile a utenti esterni.
