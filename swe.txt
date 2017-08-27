@@ -275,14 +275,13 @@ accertiamo il soddisfacimento dei requisiti qualitativi attraverso verifiche ad 
 accertiamo il soddisfacimento dei requisiti di vincolo attraverso revisione.
 
 *************************************************************************************************************************
-
 L7 Progettazione Software
 
 La progettazione precede la produzione: costruzione a priori perseguendo la correttezza per costruzione invece che inseguendo la correttezza per correzione.
 Progettare per: Dominare la complessità del prodotto («divide-et-impera»); Organizzare e ripartire le responsabilità di realizzazione;
 Produrre in economia (efficienza); Garantire qualità (efficacia).
 
-(L’analisi risponde alla domanda: qual’è il problema, quale la cosa giusta da fare? Comprensione del dominio Discernimento di obiettivi, vincoli e requisiti, Approccio investigativo.)
+(L’analisi risponde alla domanda: qual’è il problema, qual'è la cosa giusta da fare? Comprensione del dominio Discernimento di obiettivi, vincoli e requisiti, Approccio investigativo.)
 La progettazione risponde alla domanda: come farla giusta? Descrizione di una soluzione soddisfacente per tutti gli stakeholder; Il codice non esiste ancora; Prodotti: l’architettura scelta e i suoi modelli logici; Approccio sintetico.
 
 Enunciazione del problema --(analisi)--> Requisiti del problema --(progettazione)-->  Soluzione del problema
@@ -319,15 +318,15 @@ Le «scelte architetturali» determinano l’organizzazione dell’informazione 
 
 Qualità di una buona architettura
 +Sufficienza: capacità di soddisfare tutti i requisiti.
-+Comprensibilità: può essere capita dai portatori di interesse..
-+Modularità: è suddivisa in parti chiare e ben distinte
++Comprensibilità: può essere capita dai portatori di interesse.
++Modularità: è suddivisa in parti chiare e ben distinte.
 +Robustezza: è capace di sopportare ingressi diversi (giusti sbagliati tanti pochi) dall'utente e dall'ambiente.
 +Flessibilità: permette modifiche a costo contenuto al variare dei requisiti.
 +Riusabilità: sue parti possono essere utilmente impiegate in altre applicazioni.
 +Efficienza: nel tempo nello spazio e nelle comunicazioni.
 +Affidabilità (reliability):  è altamente probabile che svolga bene il suo compito quando utilizzata.
 +Disponibilità (availability): necessita di poco o nullo tempo di manutenzione fuori linea(non tutto il sistema deve essere interrotto se qualche sua parte è sotto intervento).
-+Sicurezza rispetto a malfunzionamenti (safety): è esente da malfunzionamenti gravi (il sistema dispone di un sucìfficiente grado di ridondanza per restare utilmente operativo anche in presenza di guasti locali).
++Sicurezza rispetto a malfunzionamenti (safety): è esente da malfunzionamenti gravi (il sistema dispone di un sufficiente grado di ridondanza per restare utilmente operativo anche in presenza di guasti locali).
 +Sicurezza rispetto a intrusioni (security): i suoi dati e le sue funzioni non sono vulnerabilli a intrusioni.
 +Semplicità: ogni parte contiene solo il necessario e niente di superfluo.
 
@@ -337,17 +336,16 @@ Qualità di una buona architettura
 L’orientamento ad oggetti aiuta molto a raggiungere la coesione : SOLID.
 Proprietà interna di singole componenti, Funzionalità “vicine” devono stare nella stessa componente, La modularità spinge a decomporre il grande in piccolo, La ricerca di coesione aiuta sia a decomporre che a porre un limite inferiore alla decomposizione.
 La coesione va massimizzata!
-Benefici: Maggiore manutenibilità e riusabilità Minore interdipendenza fra componenti, Maggiore comprensione dell’architettura del sistema.
+Benefici: Maggiore manutenibilità e riusabilità, Minore interdipendenza fra componenti, Maggiore comprensione dell’architettura del sistema.
 Vi sono svariati tipi di coesione buona:
 - Funzionale, quando le parti concorrono al medesimo specifico compito;
 - Sequenziale, quando alcune azioni sono «vicine» ad altre per ordine di esecuzione e dunque conviene tenerle insieme;
 - Informativa, quando le parti agiscono sulla stessa unità di informazione.
-La coesione è una "forza attrattiva", "cose che stanno assieme", disgregate non hanno sognificato. Importante perchè voglio fare operazioni con il massimo sia dell'efficienza che dell'efficacia, ho ciò che mi serve, so farlo al meglio. Ci puntiamo al massimo, è un desiderio, ma è difficle raggioungerla. Oggetto(offrire metodi/funzionalità significative), oggetto che svolga funzione utile ha tali parti e non ha funzioni accessorie (toJSON() del quarto appello), se si ha qualcosa in più non è coeso. Né più né meno.
+La coesione è una "forza attrattiva", "cose che stanno assieme", disgregate non hanno significato. Importante perchè voglio fare operazioni con il massimo sia dell'efficienza che dell'efficacia, ho ciò che mi serve, so farlo al meglio. Ci puntiamo al massimo, è un desiderio, ma è difficle raggiungerla. Oggetto (offrire metodi/funzionalità significative), oggetto che svolga funzione utile ha tali parti e non ha funzioni accessorie (toJSON() del quarto appello), se si ha qualcosa in più non è coeso. Né più né meno.
 
-teoria [coesione, le parti sono raccolte in gruppi che concorrono agli stessi obiettivi e sono strettamente e necessariamente coinvolte, è un indicatore di necessità dei membri che ci sono dentro, se ne manca uno non sono sufficienti, se ce n’è uno in più è superfluo.]
+teoria [coesione, le parti sono raccolte in gruppi che concorrono agli stessi obiettivi e sono strettamente e necessariamente coinvolte, è un indicatore di necessità dei membri che ci sono dentro, se ne manca uno non sono sufficienti, se ce n’è uno in più è superfluo!]
 
-
-teoria[accoppiamento L’accoppiamento è misurabile interpretando le componenti di un sistema come i nodi di un grafo orientato dove gli archi sono dipendenze di una componente nei confronti di un’altra. Il numero di archi entranti in una componente (fan-in) è indice di utilità, va massimizzato! Il numero di archi uscenti (fan-out) è indice di dipendenza da altre componenti, va minimizzato!]
+teoria [accoppiamento L’accoppiamento è misurabile interpretando le componenti di un sistema come i nodi di un grafo orientato dove gli archi sono dipendenze di una componente nei confronti di un’altra. Il numero di archi entranti in una componente (fan-in) è indice di utilità, va massimizzato! Il numero di archi uscenti (fan-out) è indice di dipendenza da altre componenti, va minimizzato!]
 
 +Basso accoppiamento: parti distinte dipendono poco o niente le une dalle altre. 
 •Parti diverse possono avere un grado di interdipendenza cattiva tra loro: 
@@ -359,8 +357,8 @@ teoria[accoppiamento L’accoppiamento è misurabile interpretando le componenti
 •L'accoppiamento è una proprietà esterna di componeti
 Il grado di utilizzo U reciproco di M componeti, U=MxM massimo accoppiamnto, U=0 accoppiamneto nullo.
 •Metriche: fanIn e fanOut strutturale  
-SFIN è indice di utilità -> massimizzare 
-SFOUT è indice di dipendenza -> minimizzare
+structuralFanIn, SFIN è indice di utilità -> massimizzare 
+structuralFanOut, SFOUT è indice di dipendenza -> minimizzare
 Una buona progettazione produce componenti con SFIN elevato.
 
 
@@ -369,7 +367,7 @@ Top-down: Decomposizione di problemi, Stile funzionale.
 Bottom-up: Composizione di soluzioni, Stile object-oriented.
 Meet-in-the-middle : Approccio intermedio Il più frequentemente seguito.
 
-[libreria]
+libreria [a library is a collection of non-volatile resources, these may include configuration data, documentation, help data, message templates, pre-written code and subroutines, classes, values or type specifications. A library is also a collection of implementations of behavior, written in terms of a language, that has a well-defined interface by which the behavior is invoked]
 
 Framework
 -Insieme integrato di componenti SW prefabbricate, nel mondo pre-OO erano chiamate librerie
@@ -395,19 +393,15 @@ Esempi
  Comunicazioni asincrone (per eventi)
 
 Design Pattern:
-Soluzione progettuale a problema ricorrente
-Definisce una funzionalità lasciando gradi di libertà d’uso (Ha corrispondenza precisa nel codice sorgente)
-Il corrispondente architetturale degli algoritmi che invece specificano procedimenti di soluzione
-Rilevante nel SW a partire dalla pubblicazione di “Design Patterns” della Gang of Four 
+Soluzione progettuale a problema ricorrente.
+Definisce una funzionalità lasciando gradi di libertà d’uso (Ha corrispondenza precisa nel codice sorgente).
+Il corrispondente architetturale degli algoritmi che invece specificano procedimenti di soluzione.
+Rilevante nel SW a partire dalla pubblicazione di “Design Patterns” della Gang of Four.
 Per la progettazione a livello sistema si usano pattern architetturali!
 
-Design Pattern - Soluzione progettuale generale a un problema ricorrente. Una descrizione o un
-modello da applicare per risolvere un problema che può presentarsi in diverse
-situazioni durante la progettazione e lo sviluppo del software.
+Design Pattern - Soluzione progettuale generale a un problema ricorrente. Una descrizione o un modello da applicare per risolvere un problema che può presentarsi in diverse situazioni durante la progettazione e lo sviluppo del software.
 
-
-
-Pattern Architetturali:
+Pattern Architetturali: (progettazione a livello sistema)
 -Architettura “three-tier” (a livelli)
  Strato della presentazione (GUI)
  Strato della logica operativa (business logic)
@@ -421,7 +415,6 @@ Pattern Architetturali:
 -Architettura “peer-to-peer”
  Interconnessione di scambio senza server intermedio
 
-
 Progettazione di dettaglio: attività
 -Definizione delle unità realizzative (moduli)
  Un carico di lavoro realizzabile dal singolo programmatore;
@@ -431,12 +424,11 @@ Progettazione di dettaglio: attività
  Definizione delle caratteristiche significative-> Da fissare nella progettazione;
  Dal nulla o tramite specializzazione di componenti esistenti.
 
-
 Progettazione di dettaglio: obiettivi
 -Assegnare unità a componenti
  Per organizzare il lavoro di programmazione;
- Per assicurare congruenza con l’architettura di sistema;
--Produrre la documentazione necessaria.
+ Per assicurare congruenza con l’architettura di sistema.
+-Produrre la documentazione necessaria
  Perché la programmazione possa procedere in modo certo e disciplinato;
  Tracciamento per attribuire requisiti alle unità;
  Per definire le configurazioni ammissibili del sistema.
@@ -480,7 +472,7 @@ L10 Qualità del software
 Il concetto di qualità è correlato a quello di valutazione(comparativa o di conformità).
 La valutazione della qualità ha più destinatari, chi fa, chi usa, chi valuta.
 
-Qualità: Insieme delle caratteristiche di un'entità che ne determinano la capacità di soddisfare esigenze espresse e implicite
+Qualità: Insieme delle caratteristiche di un'entità che ne determinano la capacità di soddisfare esigenze espresse e implicite.
 (ISO 8402:1994, glossario dei termini, confluito in ISO 9000:2005)
 
 Sistema qualità: La struttura organizzativa, le responsabilità, le procedure, i procedimenti, e le risorse messe in atto per il perseguimento della qualità. (ISO 8402:1994 → ISO 9000:2005)
@@ -521,7 +513,6 @@ Il lato negativo dell'impatto degli standard:
 -L’attuazione di standard svincolata da controlli di efficacia sfocia in eccessi di burocrazia
 -Senza il supporto di strumenti informatici possono richiedere frustranti attività manuali
 
-
 Modelli della qualità SW:
 -Strumenti utili alla valutazione
  Nella visione dell’utente -> Rispetto all’uso;
@@ -545,9 +536,9 @@ Riferimenti normativi
  Definizione: catalogazione sistematica delle caratteristiche rilevanti;
  Valutazione: definizione di metriche per la loro valutazione.
 -Definizione: modello della qualità SW (ISO/IEC 9126)
- Visione esterna : relativa all’esecuzione del prodotto (Product requirements);
- Visione interna : relativa al prodotto non in esecuzione (Product-component requirements);
- Visione in uso : relativa alla percezione dell’utente / operatore(Customer requirements).
+ Visione esterna: relativa all’esecuzione del prodotto (Product requirements);
+ Visione interna: relativa al prodotto non in esecuzione (Product-component requirements);
+ Visione in uso: relativa alla percezione dell’utente/operatore(Customer requirements).
 -Valutazione della qualità SW (ISO/IEC 14598)
  Misurazione quantitativa: «l’uso di una metrica per assegnare un valore (numeo o categoria) su una scala predefinita»;
  Meglio: «il processo attraverso cui, secondo regole definite, simboli o numeri sono assegnati ad attributi di una entità»
@@ -559,7 +550,7 @@ sweki[Nel 2005, la famiglia ISO/IEC 25000 ha rimpiazzato gli standard 14598 e 91
 
 Software Metrics:
 -Any type of measurement which relates to a software system, process or documentation
- Program: SLOC. Text: Gunning’s fog index. Effort: person-days 
+ Program: SLOC. Text: Gunning’s fog index. Effort: person-days.
  Fog = (average number of words per sentence) + (number of words of 3 syllables or more) ) * 0.4
 -Allow the product and the process to be quantified
 -May be used to predict product attributes or to control the software process
@@ -574,7 +565,7 @@ Metrics Assumpions:
 -It may be difficult to relate what can be measured to desirable external quality attributes.
 
 sweki[
-Una metrica è un modo per dare un significato a dei valori, quindi è l’inter- pretazione di un sistema di unità di misura. Una misurazione quantitativa è l’uso di una metrica per assegnare un valore su una scala predefinita.
+Una metrica è un modo per dare un significato a dei valori, quindi è l’interpretazione di un sistema di unità di misura. Una misurazione quantitativa è l’uso di una metrica per assegnare un valore su una scala predefinita.
 Le metriche software permettono di quantificare sia un prodotto (e quindi predire i suoi attributi) sia un processo (al fine di monitorarlo e migliorarlo).
 L’uso di una metrica assume che:
 • Si può misurare un certo attributo (o proprietà) del software.
@@ -588,10 +579,8 @@ La selezione delle metriche (e la scelta dei criteri di accettazione) parte dall
 ]
 
 Qualità nel ciclo di vita:
--Qualità obiettivo(responsabilità del committente)
- soddisfacimento dei requisiti, misura di qualità parzialmente implicita.
--Qualità richiesta(responsabilità del committente e del fornitore)
- sancita contrattualmente, misura di qualità esplicita.
+-Qualità obiettivo(responsabilità del committente)-> soddisfacimento dei requisiti, misura di qualità parzialmente implicita.
+-Qualità richiesta(responsabilità del committente e del fornitore)-> sancita contrattualmente, misura di qualità esplicita.
 -Qualità progettata(responsabilità del fornitore).
 -Qualità stimata(responsabilità del fornitore).
 -Qualità consegnata(responsabilità del fornitore).
@@ -599,7 +588,6 @@ Qualità nel ciclo di vita:
 Fine L10
 
 ******************************************************************
-
 L11 Qualità di processo
 
 Qualità del processo come esigenza: organizzazione e diffusione interna sistematica; identificazione di prodotti intermedi e di momenti di verifica; riproducibilità dei risultati; quality assurance(non solo sistematica ma sempre più proattiva(preventiva)).
@@ -649,18 +637,16 @@ Accertare tracciabilità tra soluzioni e requisiti.
 Assicurare la buona pianificazione delle attività (per uso di risorse).
 
 Ramo discendente pianificazione, mettere in moto per fare cose quando viene il momento, premesse. 
-Pianificazione ha a che fare con la strategia, come raggiungere gliobiettivi, il pdq ha obiettivo di massima conformità misurata tramite la qualità, qualità dei processi e del prodotto che realizziamo. Efficacia, obiettivi di qualità misurabili. Obiettivo dell'efficiacia= conformità, ovvero qualità del prodotto e dei processi. Quali sono gli obiettivi, tenere conto di come li sto raggiungendo(verifica).
+Pianificazione ha a che fare con la strategia, come raggiungere gli obiettivi, il pdq ha obiettivo di massima conformità misurata tramite la qualità, qualità dei processi e del prodotto che realizziamo. Efficacia, obiettivi di qualità misurabili. 
+Obiettivo dell'efficiacia= conformità, ovvero qualità del prodotto e dei processi. Quali sono gli obiettivi, tenere conto di come li sto raggiungendo(verifica).
 Il pdq comincia enunciando obiettivi di qualità in modo QUANTITATIVO. Obiettivo e punteggi minimi.
-Le metriche e le loro tecniche di misurazione vanno nelle norme (che ocsa misuro e come lo misuro). Il pdq contine gli obiettivi metrici. La prima parte contiene l'enunciazione degli obiettivi.
-Il piano di progetto ha come obioettivo l'uso ottimo delle risorse=massima efficienza misurata con consuntivo di periodo e consuntivo finale.
+Le metriche e le loro tecniche di misurazione vanno nelle norme (che cosa misuro e come lo misuro). Il pdq contine gli obiettivi metrici. La prima parte contiene l'enunciazione degli obiettivi.
+Il piano di progetto ha come obiettivo l'uso ottimo delle risorse=massima efficienza misurata con consuntivo di periodo e consuntivo finale.
 Non tutti i processi hanno obiettivi di qualità perchè alcuni usati troppo poco. Si utilizzano metriche proattive non reattive.
 Quando verifichiamo? il pdq riceve risorse dal pdp, coerenti non ridondanti.
-La seconda parte enuncia cosa si verifica e quando rimandando al pdp pe ri dettagli. Il prventivo a finire si può modificare in base la consuntivo di periodo.
-La seconda parte espone rendiconto ed esiti. Resoconto dei punti di verifica (revisioni interne, revisioni di progresso, ecc) fondamentalmente è un appendice. Copertura dei requisiti(progettazione, codice, implementazione, valudazione), latre metruche di copertura(test). Vedere se sono stati raggiunti gli obiettivi di qualità.
-
-La seconda parte
-Ramo ascendente si fa ciò che si è pianificato, fatte le cose -> resoconti, risultati, criticità.
-
+La seconda parte enuncia cosa si verifica e quando rimandando al pdp per i dettagli. Il preventivo a finire si può modificare in base al consuntivo di periodo.
+La seconda parte espone rendiconto ed esiti. Resoconto dei punti di verifica (revisioni interne, revisioni di progresso, ecc) fondamentalmente è un appendice. Copertura dei requisiti(progettazione, codice, implementazione, valudazione), altre metriche di copertura(test). Vedere se sono stati raggiunti gli obiettivi di qualità.
+La seconda parte: Ramo ascendente si fa ciò che si è pianificato, fatte le cose -> resoconti, risultati, criticità.
 
 
 Strumenti di valutazione
@@ -675,8 +661,7 @@ CAPABILITY: misura di quanto è adeguato un processo per gli scopi per cui è st
 Caratteristica di un processo considerato singolarmente!!
 Determina l’intorno del risultato (di efficienza ed efficacia) raggiungibile utilizzando quel processo.
 
-Un processo a basso livello di capability:
-Dipende da chi lo attua; Viene definito e seguito in modo opportunistico; Rende difficile prevederne l’esito, l’avanzamento e la qualità; Porta a compromessi tra funzionalità e qualità.
+Un processo a basso livello di capability: Dipende da chi lo attua; Viene definito e seguito in modo opportunistico; Rende difficile prevederne l’esito, l’avanzamento e la qualità; Porta a compromessi tra funzionalità e qualità.
 
 Un processo ad alto livello di capability è seguito da tutti in modo disciplinato, sistematico e quantificabile.
 
@@ -705,15 +690,13 @@ Approvvigionamento di prodotti e servizi (CMMI-ACQ).
 
 
 3) SPICE e iso/iec 15504
-Software Process Improvement Capability dEtermination, nato nel 1992 per armonizzare SPY con ISO/IEC 12207 e iso9001, poi confluito in iso/iec tr 15504:1998.
-15504 livelli e attributi:
+Software Process Improvement Capability dEtermination, nato nel 1992 per armonizzare SPY con ISO/IEC 12207 e iso9001, poi confluito in iso/iec tr 15504:1998. 15504 livelli e attributi:
 0-incomplete
 0-1 performed
 1-2 managed
 2-3 established
 3-4 predictable
 4-5 optimizing
-
 evaluation da 0 a 5 e tutti i livelli 15504 possono essere 
 not implemented, partially implemented, largely implemented, fully implemneted.
 
