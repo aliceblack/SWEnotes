@@ -488,7 +488,7 @@ Controllo
 Miglioramento continuo
 
 Pianificazione di qualità: Le attività del sistema qualità mirate a fissare gli obiettivi di qualità, i processi e le risorse necessarie per conseguirli (ISO 9000).
-Piano di qualità:
+Piano di qualità: pianificazione di qualità
 Fissa le politiche aziendali per il perseguimento della qualità (visione orizzontale-trasversalmente sull'intera organizzazione)
 Determina gli obiettivi di qualità del singolo progetto (visione verticale-specificamente per un prodotto/servizio)
 Assume l'uso di opportuno strumenti e modalità di controllo
@@ -627,7 +627,7 @@ Specifica le modalità per la sua evoluzione.
 Piano della Qualità (PdQ)
 Il documento che definisce gli elementi del SGQ(sistema gestione qualità) e le risorse che devono essere applicate in uno specifico caso (prodotto, processo, progetto) (ISO 9000).
 Taglio operativo:
-Concretizza il Manuale della Qualità a livello di progetto, dunque sotto specifici vincoli di tempo e di risorse;
+Concretizza il Manuale della Qualità a livello di progetto, dunque sotto specifici vincoli di TEMPO e di RISORSE;
 Può avere valenza contrattuale, nel progetto didattico è integrato nel Piano di Qualifica.
 
 Il PdQ in pratica
@@ -638,8 +638,9 @@ Assicurare la buona pianificazione delle attività (per uso di risorse).
 
 Ramo discendente pianificazione, mettere in moto per fare cose quando viene il momento, premesse. 
 Pianificazione ha a che fare con la strategia, come raggiungere gli obiettivi, il pdq ha obiettivo di massima conformità misurata tramite la qualità, qualità dei processi e del prodotto che realizziamo. Efficacia, obiettivi di qualità misurabili. 
-Obiettivo dell'efficiacia= conformità, ovvero qualità del prodotto e dei processi. Quali sono gli obiettivi, tenere conto di come li sto raggiungendo(verifica).
+Obiettivo dell'efficacia= conformità, ovvero qualità del prodotto e dei processi. Quali sono gli obiettivi, tenere conto di come li sto raggiungendo(verifica).
 Il pdq comincia enunciando obiettivi di qualità in modo QUANTITATIVO. Obiettivo e punteggi minimi.
+Il PdQ risponde alla domanda "quali e quante prove".
 Le metriche e le loro tecniche di misurazione vanno nelle norme (che cosa misuro e come lo misuro). Il pdq contine gli obiettivi metrici. La prima parte contiene l'enunciazione degli obiettivi.
 Il piano di progetto ha come obiettivo l'uso ottimo delle risorse=massima efficienza misurata con consuntivo di periodo e consuntivo finale.
 Non tutti i processi hanno obiettivi di qualità perchè alcuni usati troppo poco. Si utilizzano metriche proattive non reattive.
@@ -691,12 +692,29 @@ Approvvigionamento di prodotti e servizi (CMMI-ACQ).
 
 3) SPICE e iso/iec 15504
 Software Process Improvement Capability dEtermination, nato nel 1992 per armonizzare SPY con ISO/IEC 12207 e iso9001, poi confluito in iso/iec tr 15504:1998. 15504 livelli e attributi:
-0-incomplete
-0-1 performed
-1-2 managed
-2-3 established
-3-4 predictable
-4-5 optimizing
+
+(dal pdq)
+0-incomplete - le performance del processo, come i suoi risultati, sono incompleti.
+
+1 performed - i processi sono eseguiti intuitivamente per raggiungere dei risultati,
+process performance: gli obiettivi sono raggiunti trasformando input identificabili in output identificabili.
+
+2 managed - i processi e i prodotti dei processi sono gestiti e le responsabilità sono definite,
+performance management-> il prodotto è coerente con gli obiettivi fissati;
+work product management-> il prodotto è documentato, controllato e verificato.
+
+3 established - il processo è definito o estrapolato da uno standard,
+process definition-> l’esecuzione del processo si basa su standard;
+process deployment-> il processo usufruisce delle risorse in modo efficace.
+
+4 predictable - sono definite metriche per le performance di processo e per i risultati prodotti,
+process measurement-> vengono utilizzate le misure, le metriche e gli obiettivi per garantire il raggiungimento dei traguardi;
+process control-> vengono utilizzate misure e metriche per controllare processi e prodotti, al fine di effettuare correzioni migliorative.
+
+5 optimizing - misure quantitative sono utilizzate per l’analisi di performance di processo e dei suoi risultati per attuarne il continuo miglioramento,
+process innovation-> applicazione di approcci innovativi;
+process optimization-> ottimizzazione controllata e misurata di processo.
+
 evaluation da 0 a 5 e tutti i livelli 15504 possono essere 
 not implemented, partially implemented, largely implemented, fully implemneted.
 
@@ -739,8 +757,8 @@ Richiede esecuzione del programma, viene effettuata tramite prove(test). Usata s
 as = analisi statica
 AD = analisi dinamica
 
-capitolato <-(as)- AR <-(as)- ProgLogica <-(as)- ProgDettaglio 
-^AD^              ^AD^         ^AD^                   ^AD^
+capitolato <-(as)- AnReq <-(as)- ProgLogica <-(as)- ProgDettaglio 
+^AD^              ^AD^             ^AD^                 ^AD^
 collaudo(as) <-test stema(as) <-test integrazione(as) <-test unità(as)
 
 Analisi dinamica: ambiente di prova
@@ -757,8 +775,8 @@ Analisi dinamica: definizioni
 Unità:
 La più piccola quantità di SW che conviene verificare da sola.
 Tipicamente prodotta da un singolo programmatore.
-La sua natura specifica dipende dal linguaggio di programmazione in uso, Va sempre intesa in senso architetturale,
-Non linee di codice ma entità di strutturazione (procedura, classe, package).
+La sua natura specifica dipende dal linguaggio di programmazione in uso, 
+Va sempre intesa in senso architetturale, Non linee di codice ma entità di strutturazione (procedura, classe, package).
 Il «modulo» è parte dell’unità. Il «componente» integra più unità.
 
 Test di unità
@@ -818,7 +836,7 @@ Verificatori distinti e separati dai programmatori.
 Focalizzare la ricerca su presupposti.
 Error guessing.
 
-[l'inspection esegue una lettura mirata del prodotto in esame, focalizza la ricerca sugli errori noti, più probabili può generare falsi negativi ma è molto più rapido del walkthrough]
+[l'inspection esegue una lettura mirata del prodotto in esame, focalizza la ricerca sugli errori noti, più probabili, può generare falsi negativi ma è molto più rapido del walkthrough]
 
 Attività di inspection
 Fase 1: pianificazione
@@ -903,16 +921,13 @@ teristiche:
 – stabilità: il prodotto è resiliente alle modifiche;
 – testabilità: il prodotto può essere testato.
 
-5• Portabilità: il prodotto mantiene le sue proprietà in qualsiasi sistema sia eseguito. Im- plica:
+6• Portabilità: il prodotto mantiene le sue proprietà in qualsiasi sistema sia eseguito. Implica:
 – conformità: adesione del prodotto a standard e convenzioni di portabilità;
 – installabilità: il prodotto è disponibile in vari ambienti;
 – adattabilità: il prodotto non richiede modifiche per il funzionamento in diversi ambienti;
 – sostituibilità: il prodotto utilizzato come alternativa ad un altro produce gli stessi risultati.
 
-
-
 ************************************
-
 L13 Verifica e validazione: Analisi Statica
 
 -Un SW di buona qualità deve possedere:
@@ -922,7 +937,7 @@ Tutte le caratteristiche non funzionali necessarie per garantire che il sistema 
 Di costruzione (architettura, codifica, integrazione); D’uso; Di funzionamento.
 
 Nessun linguaggio di programmazione garantisce a priori la completa verificabilità di ogni programma scritto in esso perciò occorre cercare buon bilanciamento tra funzionalità (potere espressivo) e integrità (costo di verifica).
-Fissato il linguaggio di programmazione, occorre sceglierne i costrutti in funzione del loro impatto (Potere espressivo / costo di verifica).
+Fissato il linguaggio di programmazione, occorre sceglierne i costrutti in funzione del loro impatto (Potere espressivo/costo di verifica).
 
 Programmi verificabili: 
 
@@ -930,14 +945,12 @@ Serve adottare uno standard di codifica e un sottoinsieme di linguaggio consapev
 La verifica solo retrospettiva (a valle dello sviluppo) è sovente inadeguata. Il costo di rilevazione e correzione di un errore è tanto maggiore quanto più avanzato è lo stadio di sviluppo.
 
 Posticipare la verifica in modalità as-lateas-possible. Approccio retrospettivo -> correctness by correction.
-
 Accompagnare la produzione con la verifica. Approccio costruttivo -> correctness by construction.
 
 Regolamentare l’uso del linguaggio di programmazione tramite regole da riflettere nelle Norme di Progetto:
 Per assicurare comportamento predicibile. Per usare solidi e collaudati criteri di programmazione. Per ragioni pragmatiche.
 
 Comportamento predicibile:
-
 Codice sorgente senza ambiguità
 -Effetti laterali (p.es. di funzioni)
 Diverse invocazioni della stessa funzione producono risultati diversi.
@@ -955,7 +968,6 @@ Usare membri privati e metodi pubblici per l’accesso.
 -Usare tipi specializzati per specificare dati
 La composizione e la specializzazione aumentano il potere espressivo del sistema di tipi del programma.
 
-
 Considerazioni pragmatiche:
 -L’efficacia dei metodi di analisi è funzione della qualità di strutturazione del codice
 Esempio: un modulo con un solo punto di ingresso (pre-) e un solo punto di uscita (post-) è più facilmente analizzabile per il suo effetto sullo stato
@@ -970,7 +982,7 @@ Il tracciamento può essere totalmente automatizzato.
 
 capitolato <--(tracciamento)-- AR <--(tracciamento)-- ProgLogica <--(tracciamento)-- ProgDettaglio 
 ^tracciamento^
-collaudo <-test stema <- test integrazione <- test unità
+collaudo <- test sistema <- test integrazione <- test unità
 
 Particolari stili di programmazione facilitano il tracciamento
 Assegnare singoli requisiti elementari a singoli moduli del programma richiede una sola procedura di prova e rende più chiara e semplice la corrispondenza tra essi.
@@ -1004,7 +1016,7 @@ Trasformando così il flusso sequenziale del programma in un insieme di assegman
 
 5) Verifica formale del codice
 Provare la correttezza del codice sorgente rispetto alla specifica algebrica dei requisiti(esplorando tutte le esecuzioni possibili, non fattibile tramite analisi dinamica).
-Correttezza parziale->le condizioni di verifica sono espresse ocme teoremi la cui verità implica certe precondizioni in ingresso e certe postcondizioni in uscita, la prova di correttezza vale sotto l'ipotesi di terminazione del programma, la prova di correttezza totale richiede prova di terminazione.
+Correttezza parziale-> le condizioni di verifica sono espresse come teoremi la cui verità implica certe precondizioni in ingresso e certe postcondizioni in uscita, la prova di correttezza vale sotto l'ipotesi di terminazione del programma, la prova di correttezza totale richiede prova di terminazione.
 
 6) Analisi di limite
 Verificare che i dati del programma restino entro i limiti del loro tipo e della precisione desiderata quindi:
@@ -1015,8 +1027,7 @@ Verificare che i dati del programma restino entro i limiti del loro tipo e della
 Linguaggi evoluti assegnano limiti statici a tipi discreti consentendo verifiche automatiche sulle corrispondenti variabili (Più problematico con tipi enumerati e reali).
 
 7) Analisi d'uso di stack
-Lo stack è l’area di memoria che i sottoprogrammi usano per immagazzinare dati locali, temporanei e indirizzi di ritorno generati dal compilatore: ogni flusso di controllo (thread) ha un suo proprio stack; l’ampiezza dello stack cresce con l’annidamento di
-chiamate di procedura.
+Lo stack è l’area di memoria che i sottoprogrammi usano per immagazzinare dati locali, temporanei e indirizzi di ritorno generati dal compilatore: ogni flusso di controllo (thread) ha un suo proprio stack; l’ampiezza dello stack cresce con l’annidamento di chiamate di procedura.
 Determinare la massima domanda di stack richiesta da un’esecuzione in relazione con la dimensione dell’area di memoria assegnata al processo.
 Verificare che non vi possa essere collisione tra stack e heap per qualche esecuzione.
 L’heap invece è l’area di memoria globale, l’ampiezza dell’heap è fissata a configurazione e poi consumata con la creazione dinamica di oggetti.
@@ -1030,7 +1041,7 @@ Mostrare l’assenza di effetti di interferenza tra parti separate (“partizion
 Veicoli tipici di interferenza sono Memoria dinamica (heap) condivisa, dove parti separate di programma lasciano traccia di dati abbandonati ma non distrutti (memory leak), l'azzeramento preventivo delle pagine di memoria riutilizzate (p.es. NT v5.x), l' I/O e altri dispositivi programmabili con effetti a livello sistema (esempio: watchdog).
 
 10) Analisi di codice oggetto
-Assicurareche il codice oggetto da eseguire sia una traduzione corretto del codice sorgente corrispondente e ch enessun errore od omissione siano stati introdotti dal compilatore, viene ancora effettuata manualmente, viene facilitata dalle informazioni di corrispondenza prodotte dal compilatore.
+Assicurareche il codice oggetto da eseguire sia una traduzione corretta del codice sorgente corrispondente e che nessun errore od omissione siano stati introdotti dal compilatore, viene ancora effettuata manualmente, viene facilitata dalle informazioni di corrispondenza prodotte dal compilatore.
 
 
 Analizzabilità del sistema:
@@ -1041,7 +1052,6 @@ La presenza di flussi di eccezione e di risoluzione dinamica di chiamata (dispat
 Ciascun flusso di controllo (thread) viene rappresentato e analizzato separatamente assumendo non-interferenza!
 
 **************************************
-
 L14 Verifica e validazione: Analisi Dinamica
 
 Analisi dinamica = test (prova), attività che comporta esecuzione dell’oggetto di verifica.
@@ -1055,9 +1065,9 @@ Oggetto delle prove sono Unità, aggregati, sistema completo.
 
 Fault(Guasto/difetto)->Error(errore)->failure(malfunzionalmento)
 
-A failure occurs when the behavior of a system deviates from what is specified for it.  Failures result from "problems" internal to the system which eventually manifest in the system's external behavior.
+A FAILURE(malfunzionamento) occurs when the behavior of a system deviates from what is specified for it.  Failures result from "problems" internal to the system which eventually manifest in the system's external behavior.
 
-These "problems" are called Errors and their mechanical or algorithmic or conceptual cause are termed faults, Errors are states of the system, Faults are what causes the error to exist.
+These "problems" are called ERRORS and their mechanical or algorithmic or conceptual cause are termed(definiti) faults(guasto/difetto), Errors are states of the system, Faults(difetti/guasti) are what causes the error to exist.
 Systems are hierarchical compositions of components which are themselves systems.
 
 -Obiettivo delle prove
@@ -1075,7 +1085,9 @@ La quantità massima di sforzo, tempo e risorse disponibile per la verifica è u
 Legge del rendimento decrescente -> Diminishing returns
 
 Oggetto della prova:
-Il sistema nel suo complesso (Test Sistema). Parti di esso, in relazione funzionale, d’uso, di comportamento, di struttura (Test Integrazione). Singole unità (Test Unità).
+Il sistema nel suo complesso (Test Sistema). 
+Parti di esso, in relazione funzionale, d’uso, di comportamento, di struttura (Test Integrazione). 
+Singole unità (Test Unità).
 Obiettivo della prova:
 Specificato per ogni caso di prova .In termini precisi e quantitativi
 Varia al variare dell’oggetto della prova. Il PdQ risponde alla domanda "quali e quante prove".
@@ -1086,7 +1098,7 @@ Una singola prova non basta, i risultati valgono solo per quella esecuzione e no
 (Rileva malfunzionamenti indicando la presenza di guasti, in generale non può provarne l’assenza).
 Le prove sono costose, richiedono molte risorse (tempo, persone, infrastrutture), necessitano di un processo definito, richiedono attività di ricerca, analisi, correzione.
 
-Attività di prova: specifica->codifica->compilazione->esecuzione->analisi.
+Attività di prova: specifica-> codifica-> compilazione-> esecuzione-> analisi.
 
 Elementi di una prova
 Caso di prova (test case) è una Tripla <ingresso, uscita, ambiente>
@@ -1095,7 +1107,8 @@ Una Batteria di prove (test suite) è un Insieme (sequenza) di casi di prova.
 Una Procedura di prova è Il procedimento (automatico o manuale) per eseguire, registrare, analizzare e valutare i risultati di prove.
 Prova = <Procedura, Batteria di prove>
 
-[p17 oracolo] riassunto [L’oracolo : un metodo per generare a priori i risultati attesi]
+[p17 oracolo] riassunto [L’oracolo : un metodo per generare a priori i risultati attesi.]
+[Analisi Dinamica Ciascun caso di prova deve produrre un esito decidibile (oracolo) verificato rispetto a un comportamento atteso.]
 
 Unità software composta da uno o più moduli, Modulo = componente elementare di progetto di dettaglio (quindi non necessita di test di unità).
 Unità e moduli sono determinati in progettazione di dettaglio e quindi anche il piano di TU. La TU completa quando ha verificato tutte le unità.
@@ -1108,24 +1121,22 @@ Lo statement coverage è meno potente del branch coverage.
 
 Copertura 
 Definizione (DO-178B)
-Condizione=Espressione booleana semplice non contenente al suo interno ulteriori condizioni combinate da operatori booleani.
-Decisione=Espressione composta contenente condizioni combinate da operatori booleani.
+Condizione= Espressione booleana semplice non contenente al suo interno ulteriori condizioni combinate da operatori booleani.
+Decisione= Espressione composta contenente condizioni combinate da operatori booleani.
 Al crescere del numero di condizioni all’interno di una decisione il numero di test necessario a massimizzare il condition coverage diventa proibitivo.
 DO-178B richiede allora di massimizzare il modified decision condition coverage, MCDC implica branch coverage.
 Requisiti DO-178B (software di avionica) richiede che tutte le decisioni siano soggette a test e tutti i loro possibili esiti siano effettivamente prodotti, che ciascuna condizione all’interno di una decisione assuma entrambi gli esiti (vero/falso) almeno una volta.
 Occorre allora verificare se e come ogni singola condizione possa da sola determinare tutti gli esiti possibili della decisione e non basta più provare l’intera decisione come vera o falsa!
 
 Test di Unità: Test funzionale (black-box)
-Da solo non può accertare correttezza e completezza della
-logica interna dell’unità (Va necessariamente integrato con test strutturale).
+Da solo non può accertare correttezza e completezza della logica interna dell’unità (Va necessariamente integrato con test strutturale).
 Fa riferimento alla specifica dell’unità e utilizza dati di ingresso capaci di provocare l’esito atteso.
-Ciascun insieme di dati di ingresso che producono un dato
-comportamento funzionale costituisce un caso di prova.
+Ciascun insieme di dati di ingresso che producono un dato comportamento funzionale costituisce un caso di prova.
 Classi di equivalenza invece che infiniti valori di ingresso (Valori nella medesima classe producono lo stesso comportamento).
 
 Test di Unità: Test strutturale (white-box)
 Verifica la logica interna del codice dell’unità cercando massima copertura.
-Ciascuna prova deve essere progettato per attivare ogni cammino di esecuzione all’interno del modulo.
+Ciascuna prova deve essere progettata per attivare ogni cammino di esecuzione all’interno del modulo.
 Ciascun insieme di dati di ingresso che attivano un percorso costituiscono un caso di prova.
 L’uso di debugger può agevolarne l’esecuzione ma non esonera dalla progettazione dei casi di prova.
 
@@ -1138,14 +1149,11 @@ Integrazione incrementale
 Bottom-up
 Si sviluppano e si integrano prima le parti con minore dipendenza funzionale e maggiore utilità, poi si risale l’albero delle dipendenze, questa strategia riduce il numero di stub necessari al test ma porta più tardi alla disponibilità di funzionalità di alto livello.
 Top-down
-Si sviluppano prima le parti più esterne, quelle poste sulle foglie
-dell’albero delle dipendenze e poi si scende, questa strategia comporta l’uso di molti stub ma integra a partire dalla funzionalità di più alto livello.
+Si sviluppano prima le parti più esterne, quelle poste sulle foglie dell’albero delle dipendenze e poi si scende, questa strategia comporta l’uso di molti stub ma integra a partire dalla funzionalità di più alto livello.
 
 Test di Integrazione
-Si applica alle componenti specificate nella
-progettazione architetturale, la loro integrazione costituisce il sistema completo.
-La Logica di integrazione funzionale seleziona le funzionalità da integrare, identifica le componenti che svolgono quelle funzionalità,ordina le componenti per numero di dipendenze crescente
-(Dipendenze nel flusso di controllo (chiamata) e nel flusso di dati) ed esegue l’integrazione in quell’ordine.
+Si applica alle componenti specificate nella progettazione architetturale, la loro integrazione costituisce il sistema completo.
+La Logica di integrazione funzionale seleziona le funzionalità da integrare, identifica le componenti che svolgono quelle funzionalità,ordina le componenti per numero di dipendenze crescente (Dipendenze nel flusso di controllo (chiamata) e nel flusso di dati) ed esegue l’integrazione in quell’ordine.
 I problemi rilevati durante Test di Integrazione manifestano difetti di progettazione o insufficiente qualità nei test di unità.
 Test di Integrazione ha tanti test quanto ne servono per accertare che tutti i dati scambiati attraverso ciascun interfaccia siano conformi alla loro specifica e per accertare che tutti i flussi di controllo previsti in specifica siano stati effettivamente realizzati e provati.
 
@@ -1159,8 +1167,7 @@ Altri tipi di test
 
 Test di regressione
 Ripetizione selettiva di TIntegrazione (e poi di TSistema) integrando solo parti che abbiano precedentemente superato TUnità-> nel repository di progetto devono stare solo unità SW di questo tipo.
-Servono Per accertare che modifiche intervenute per correzione o
-estensione di parti non comportino errori nel sistema (Può essere molto oneroso).
+Servono Per accertare che modifiche intervenute per correzione o estensione di parti non comportino errori nel sistema (Può essere molto oneroso).
 I contenuti del test di regressione vanno decisi nel momento in cui si approvano modifiche al SW.
 
 Test di accettazione (collaudo) Accertano il soddisfacimento dei requisiti utente.
@@ -1281,7 +1288,7 @@ Metriche di programmazione
 
 *Complessità ciclomatica
 
-proposta da Thimas McCabe nel 1976, è indipendente dal linguaggio di programmazione.
+proposta da Thomas McCabe nel 1976, è indipendente dal linguaggio di programmazione.
 Complessità del flusso di controllo: funzione dei possibili cammini indipendenti all'interno di un singolo sottoprogramma.
 Limiti: fallibilità dimostrata (nonostante ciò ancora largamente usata), costosa da applicare prima di progettare il codice in dettaglio.
 Il valore rilevato va confrontato con soglie preffisate.
@@ -1293,7 +1300,7 @@ con e numeri di archi(flusso), n numero dei nodi(espressioni o comandi), p numer
 Per esempio
 3-4+2=1 o->o->o->o 3archi 4nodi 2componendi connesse ad ogni arco
 
-Errore in difetto: la complessità reale è maggiore di quell amisurata.
+Errore in difetto: la complessità reale è maggiore di quella misurata.
 Errore in eccesso: la complessità reale è inferiore a quella misurata.
 
 *Standard per misure funzionali
@@ -1394,15 +1401,16 @@ Fragile design that break in unexpected ways (Recompilation, test, deploy, ecc).
 What is really a responsibility? An axis of change is only an axis of change if the changes actually occur. The context of the application is also important, Needless complexity Complessità inutile.
 
 Nell'esercizio 
-MArketApplication->Bill<-MarketRESTService (quarto appello)
+MArketApplication-->Bill<--MarketRESTService (quarto appello)
 Bill possiede items:List e addItem(item):void, getTotal():double,  toJson():string. 
-Per dividere il cambiamento si può pe rprimo dividere il metodo toJSON(), non stacchiamo getTotal() perchè ha bisogno delle informazioni, come la rappresentazione degli item, contenute nell'pggetto, quindi condivide lo stesso asse di cambiamento dell'oggetto. Posso modificare toJSON() senza modificare gli altri metodi.
+Per dividere il cambiamento si può per primo dividere il metodo toJSON(), non stacchiamo getTotal() perchè ha bisogno delle informazioni, come la rappresentazione degli item, contenute nell'oggetto, quindi condivide lo stesso asse di cambiamento dell'oggetto. Posso modificare toJSON() senza modificare gli altri metodi.
 
-MarketApplication -> Bill <- TransfomBill <- MarketRESTService
+MarketApplication --> Bill <-- TransformBill <-- MarketRESTService
 toJSON() metodo di transfomBill e gli latri metodi, Bill non contiene più toJSON(). I due client Market rimangono come prima.
+TransformBill, rappresentazione trsaferibile attraverso REST di un conto, ha toJSON():string.
 
 Nella domanda
-Il modo in cui si aggrega (COESIONE) non può essere casuale, va regolato con principi di aggregazione: "metti insieme le cose che se cambieranno, cambieranno insieme". Architettura è buona se facilmente comprensibile e manutenibile. Manutenzione quindi modifica(economica non stravolgimento).[Stakeholder unico] Single Responsibility Principle è un criterio per arrivae a soddifare la coesione. Ricette concrete: i pattern soecializzano le funzioni quindi aiutano la coesione.
+Il modo in cui si aggrega (COESIONE) non può essere casuale, va regolato con principi di aggregazione: "metti insieme le cose che se cambieranno, cambieranno insieme". Architettura è buona se facilmente comprensibile e manutenibile. Manutenzione quindi modifica(economica non stravolgimento).[Stakeholder unico] Single Responsibility Principle è un criterio per arrivare a soddifare la coesione. Ricette concrete: i pattern soecializzano le funzioni quindi aiutano la coesione.
 Aggregare delle funzionalità -> le procedure (che all'inizio non esistevano) sono utili perchè coese. 
 
 2 - OPEN‐CLOSE PRINCIPLE (You should be able to extend a classes behavior, without modifying it)
@@ -1428,8 +1436,7 @@ Changes are obtained adding new code.
 No program can be 100% closed, Closure must be strategic! 
 Closure can be gained through abstraction Using interfaces and polimorphim (The draw abstract method in the Shape class).
 ...or can be gained in a «data‐driven» fashion, Sometimes using information configured in external structure can be the only solution
-(What if we want to draw shapes in a specific order that
-depends from type!?).
+(What if we want to draw shapes in a specific order that depends from type!?).
 
 Conventions and heuristics derived from Open Closed Principle:
 Make all member variables private: When the member variables of a class change, every function that depends upon them must be changed!
@@ -1458,12 +1465,18 @@ not use".
 
 Reducing coupling means to depend upon interfaces, not implementations. The risk is to depend upon a «fat» or «polluted» interfaces. Fat interfaces are not cohesive: Methods can be broken up into groups of functions, Clients must view only the part they are interested to.
 
-Separation by delegation: Object form the Adapter design pattern. 
-Separation through multiple inheritance: Class form the Adapter design pattern.
 
-Violation Example: The Door class now depends upon TimerClient. Not all varieties of Door need timing. Moreover, the applications that use those derivatives will have to import the definition of the TimerClient class, even though it is not used. The interface of Door has been polluted with an interface that it does not require. Each time a new interface is added to the base class, that interface must be implemented in derived classes. Default implementations violate the
-Liskov Substitution Principle (LSP). Sometimes it is the client that forces a change to an interface, Also the Door interface have to be changed, Clients that does not need timer doors will also be affected, The result is a inadvertent involontario coupling between all the
-clients.
+  door              TimerCLient
+TimerDoor <----<> DoorTimerAdapter 
+           ----->
+DoorTimerAdapter translates a Door into a TimerClient, Clients of Door and TimerClient are not coupled anymore.
++++Separation by delegation: Object form the Adapter design pattern. 
+
+Door Timerclient
+  TimedDoor
++++Separation through multiple inheritance: Class form the Adapter design pattern.
+
+Violation Example: The Door class now depends upon TimerClient. Not all varieties of Door need timing. Moreover, the applications that use those derivatives will have to import the definition of the TimerClient class, even though it is not used. The interface of Door has been polluted with an interface that it does not require. Each time a new interface is added to the base class, that interface must be implemented in derived classes. Default implementations violate the Liskov Substitution Principle (LSP). Sometimes it is the client that forces a change to an interface, Also the Door interface have to be changed, Clients that does not need timer doors will also be affected, The result is a inadvertent involontario coupling between all the clients.
 
 5 - DEPENDENCY INVERSION PRINCIPLE (Depend on abstractions, not on concretions) terzo appello
 
@@ -1480,3 +1493,10 @@ We have performed dependency inversion. the dependencies have been inverted; the
 Now we can reuse the “Copy” class, independently of the “Keyboard Reader” and the “Printer Writer”. 
 
 Module containing high level policy should be independent upon low level details modules. We have use abstraction to limit dependency.
+
+III appello 
+                         reader<--copier-->writer
+KeyboardReader SocketReader                   PrinterWriter HDFSwriter
+
+***********************************************************
+-private +public #protected ~package
